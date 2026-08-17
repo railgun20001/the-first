@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design Technical Solution"
+  short_description: "Decide architecture, deployment, and environment needs"
+  default_prompt: "Use $design-technical-solution to decide and validate the project technology."
