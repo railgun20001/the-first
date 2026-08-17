@@ -199,12 +199,12 @@ for (const required of [
   "## Next conversation",
 ]) check(stateTemplate.includes(required), `THE-FIRST template is missing: ${required}`);
 
-const readmeZh = read("README.md").replaceAll("\r\n", "\n");
-const readmeEn = read("README.en.md").replaceAll("\r\n", "\n");
+const readmeEn = read("README.md").replaceAll("\r\n", "\n");
+const readmeZh = read("README.zh-CN.md").replaceAll("\r\n", "\n");
 check(readmeZh.startsWith("# The First\n"), "Chinese README title must be exactly The First");
 check(readmeEn.startsWith("# The First\n"), "English README title must be exactly The First");
-check(readmeZh.includes("[English](README.en.md)"), "Chinese README must link to English README");
-check(readmeEn.includes("[中文](README.md)"), "English README must link to Chinese README");
+check(readmeZh.includes("[English](README.md) | 中文"), "Chinese README must link to English README");
+check(readmeEn.includes("English | [中文](README.zh-CN.md)"), "English README must link to Chinese README");
 check(readmeZh.includes("`guard-artifact-scope`"), "Chinese README must list guard-artifact-scope");
 check(readmeEn.includes("`guard-artifact-scope`"), "English README must list guard-artifact-scope");
 check(
