@@ -1,0 +1,4 @@
+interface:
+  display_name: "Design Product Experience"
+  short_description: "Validate product flows, interaction, and minimal prototypes"
+  default_prompt: "Use $design-product-experience to shape and validate the product experience."

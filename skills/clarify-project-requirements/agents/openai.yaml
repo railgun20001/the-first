@@ -1,0 +1,4 @@
+interface:
+  display_name: "Clarify Project Requirements"
+  short_description: "Turn ambiguous ideas into accepted project outcomes"
+  default_prompt: "Use $clarify-project-requirements to clarify this project before development."
