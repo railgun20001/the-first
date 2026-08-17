@@ -1,0 +1,4 @@
+interface:
+  display_name: "Develop In Stages"
+  short_description: "Deliver accepted features with tests and focused commits"
+  default_prompt: "Use $develop-in-stages to deliver the next accepted feature slice."
