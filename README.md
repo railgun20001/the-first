@@ -52,7 +52,7 @@ The First does not run every stage continuously by default. It waits at phase an
 | `clarify-project-requirements` | Clarify outcomes, audience, scope, brand, engineering name, critical requirements, and acceptance criteria |
 | `design-product-experience` | Shape information architecture, visual direction, interaction states, and an optional minimal prototype |
 | `design-technical-solution` | Decide the stack, boundaries, component strategy, testing, preliminary deployment, and environment needs |
-| `develop-in-stages` | Deliver reviewable feature slices with tests, self-check steps, retained feedback, and focused commits |
+| `develop-feature-slices` | Deliver reviewable feature slices with tests, self-check steps, retained feedback, and focused commits |
 | `deploy-project` | Implement authorized deployment, migration, health checks, business acceptance, and rollback |
 | `track-project-progress` | Maintain cross-conversation state, source links, slices, feedback, and verification evidence |
 

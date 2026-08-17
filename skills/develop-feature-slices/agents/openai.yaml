@@ -1,0 +1,4 @@
+interface:
+  display_name: "Develop Feature Slices"
+  short_description: "Deliver accepted features with tests and focused commits"
+  default_prompt: "Use $develop-feature-slices to deliver the next accepted feature slice."

@@ -70,13 +70,13 @@ function validateMarkdownLinks(absolutePath) {
   }
 }
 
-const expectedVersion = "0.1.1";
+const expectedVersion = "0.2.0";
 const expectedSkills = [
   "clarify-project-requirements",
   "deploy-project",
   "design-product-experience",
   "design-technical-solution",
-  "develop-in-stages",
+  "develop-feature-slices",
   "guard-artifact-scope",
   "track-project-progress",
   "using-the-first",
@@ -137,7 +137,7 @@ for (const required of [
   "$clarify-project-requirements",
   "$design-product-experience",
   "$design-technical-solution",
-  "$develop-in-stages",
+  "$develop-feature-slices",
   "$deploy-project",
   "$track-project-progress",
   "$guard-artifact-scope",
@@ -168,7 +168,7 @@ const technicalSkill = read("skills/design-technical-solution/SKILL.md");
 for (const required of ["Design preliminary deployment now", "Once the technical solution is accepted", "Ask for explicit consent"])
   check(technicalSkill.includes(required), `Technical workflow is missing contract: ${required}`);
 
-const developmentSkill = read("skills/develop-in-stages/SKILL.md");
+const developmentSkill = read("skills/develop-feature-slices/SKILL.md");
 for (const required of [
   "one active slice",
   "Recommended user action",

@@ -1,9 +1,9 @@
 ---
-name: develop-in-stages
+name: develop-feature-slices
 description: Plan, implement, test, review, and commit one observable feature slice at a time after requirements, experience, technical solution, and environment outcomes are accepted. Use when production development is authorized, when a large feature needs decomposition, when resuming an active slice, or when user corrections must be distilled into durable regression rules. Require human slice acceptance by default, provide self-check steps, preserve unrelated Git work, and create focused functional commits.
 ---
 
-# Develop In Stages
+# Develop Feature Slices
 
 Deliver small, complete user outcomes instead of large batches of plausible but unverified code.
 

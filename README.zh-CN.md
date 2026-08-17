@@ -52,7 +52,7 @@ The First 默认不连续执行所有阶段。AI 会在阶段和功能切片的�
 | `clarify-project-requirements` | 澄清目标、用户、范围、品牌名、工程名、关键需求和验收标准 |
 | `design-product-experience` | 设计信息结构、视觉方向、交互状态和可选最简原型 |
 | `design-technical-solution` | 决定技术栈、系统边界、组件策略、测试方法、部署初案并检查环境 |
-| `develop-in-stages` | 拆分和实施可验收功能切片，补齐测试、自测、反馈防回归和功能提交 |
+| `develop-feature-slices` | 拆分和实施可验收功能切片，补齐测试、自测、反馈防回归和功能提交 |
 | `deploy-project` | 在明确授权下实施部署、迁移、健康检查、业务验收和回滚 |
 | `track-project-progress` | 维护跨对话可恢复的状态、索引、切片、反馈和验证证据 |
 

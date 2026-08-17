@@ -88,7 +88,7 @@ When `THE-FIRST.md` exists:
 | `requirements` | `$clarify-project-requirements` |
 | `experience` | `$design-product-experience` |
 | `technical` | `$design-technical-solution` |
-| `development` | `$develop-in-stages` |
+| `development` | `$develop-feature-slices` |
 | `deployment` | `$deploy-project` |
 | Any progress or handoff update | `$track-project-progress` |
 
