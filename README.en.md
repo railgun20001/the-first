@@ -155,7 +155,7 @@ Clone this repository and add the directories under `skills/` to the tool's supp
 Codex:
 
 ```powershell
-codex plugin remove the-first
+codex plugin remove the-first@the-first
 codex plugin marketplace remove the-first
 ```
 

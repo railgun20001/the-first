@@ -1,6 +1,6 @@
 ---
 name: clarify-project-requirements
-description: Clarify and baseline software project requirements before production design or implementation. Use for new projects, ambiguous feature requests, major scope changes, conflicting product sources, missing acceptance criteria, or when brand, engineering name, audience, platform, SEO, performance, security, privacy, accessibility, visual direction, prototype need, or scope boundaries are not yet accepted. Apply first-principles reasoning internally while speaking to users in plain language.
+description: Clarify and baseline software project requirements before production design or implementation. Use for new projects, ambiguous feature requests, major scope changes, conflicting product sources, missing acceptance criteria, or when brand, engineering name, audience, platform, SEO, performance, security, privacy, accessibility, visual direction, prototype need, or scope boundaries are not yet accepted. Apply first-principles reasoning internally while speaking to users in plain language, and defer framework, database, API, hosting, and deployment questions when the initial product outcome is still vague.
 ---
 
 # Clarify Project Requirements
@@ -32,6 +32,8 @@ Check each request:
 - What must remain true in success, failure, and boundary cases?
 
 Do not force the user to learn this vocabulary. Ask short, concrete questions and explain why a decision matters only when it changes scope or risk.
+
+When the user does not yet know an answer, preserve it as an explicit unknown and offer a few outcome-oriented examples. Never make a default CRUD screen, framework, data store, or deployment shape stand in for an unconfirmed product requirement. For a vague initial idea, establish the outcome, audience, essential workflow, and success evidence before asking any production technology question. Ask for technology preferences only when they materially constrain the product or the project already has an accepted technical boundary.
 
 ## Build the minimum complete baseline
 

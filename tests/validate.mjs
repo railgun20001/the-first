@@ -131,6 +131,7 @@ for (const skillName of expectedSkills) {
 const usingSkill = read("skills/using-the-first/SKILL.md");
 for (const required of [
   "Start with evidence",
+  "Treat a first response that asks for a framework",
   "Only explicit human acceptance",
   "$clarify-project-requirements",
   "$design-product-experience",

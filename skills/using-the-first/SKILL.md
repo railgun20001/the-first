@@ -1,11 +1,32 @@
 ---
 name: using-the-first
-description: Start or resume a human-governed software project workflow before substantial implementation begins. Use when a user wants to initialize a project, turn an idea into software, add a substantial feature, recover work in a new conversation, or explicitly asks to use The First. Inspect project truth sources and THE-FIRST.md, restore current decisions and feedback, enforce phase gates, and route to the appropriate The First skill.
+description: Start or resume a human-governed software project workflow before substantial implementation begins. Use when a user wants to initialize a project, turn an idea into software, add a substantial feature, recover work in a new conversation, or explicitly asks to use The First. Inspect project truth sources and THE-FIRST.md, restore current decisions and feedback, enforce phase gates, and route to the appropriate The First skill. For a vague initial idea, do not ask about frameworks, databases, APIs, hosting, or deployment in the first response.
 ---
 
 # Using The First
 
 Keep the human responsible for product direction and acceptance. Prevent implementation from outrunning confirmed requirements, experience, technical constraints, deployment needs, and current project evidence.
+
+## Handle a vague idea safely
+
+When the user provides only a product category such as "build an admin panel":
+
+1. If a project is available, inspect it before questioning the user.
+2. In the first response, ask only about the desired outcome, target users, essential workflow, success evidence, and whether an existing project or source exists.
+3. Ask a small, answerable set rather than the full lifecycle questionnaire.
+4. Do not ask about frameworks, languages, databases, APIs, authentication mechanisms, hosting, containers, or deployment yet unless the user already stated one as a fixed constraint.
+5. Do not suggest default CRUD, a starter stack, or implementation as the fallback for uncertainty.
+6. Record unknowns and route to `$clarify-project-requirements`.
+
+Technical questions become appropriate only after product intent and discoverable project facts establish which decisions matter.
+
+Treat a first response that asks for a framework, language, database, API, authentication mechanism, hosting, container, or deployment preference as a workflow failure. End the first response after a small set such as:
+
+- Who will use this and what outcome should improve?
+- Which one to three workflows matter most?
+- Is there an existing project, requirement source, or current product to inspect?
+
+Do not append technical questions to this set.
 
 ## Start with evidence
 
@@ -42,6 +63,8 @@ When `THE-FIRST.md` is absent:
 6. Route to `$clarify-project-requirements`. Do not start production implementation from the initial idea.
 
 Use the project's existing documentation conventions. Create fallback documents under `docs/project/` only when no existing truth source can hold the missing information.
+
+If the user cannot answer an early product question, record the unknown and offer concrete outcome examples to help them decide. Do not substitute a default CRUD page, framework, database, or other implementation as a supposedly safe requirement. For a vague initial idea, do not ask for technology preferences in the first response. First establish the outcome, audience, essential workflow, success evidence, and existing-project context; inspect that context before leaving production choices to the technical phase.
 
 ## Resume a project
 

@@ -155,7 +155,7 @@ claude plugin details the-first@the-first
 Codex：
 
 ```powershell
-codex plugin remove the-first
+codex plugin remove the-first@the-first
 codex plugin marketplace remove the-first
 ```
 
