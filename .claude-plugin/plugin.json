@@ -1,0 +1,19 @@
+{
+  "name": "the-first",
+  "version": "0.1.0",
+  "description": "Human-in-the-loop project workflow skills for reliable AI-assisted software delivery.",
+  "author": {
+    "name": "railgun20001",
+    "url": "https://github.com/railgun20001"
+  },
+  "homepage": "https://github.com/railgun20001/the-first",
+  "repository": "https://github.com/railgun20001/the-first",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "requirements",
+    "planning",
+    "human-in-the-loop",
+    "software-development"
+  ]
+}

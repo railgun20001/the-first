@@ -1,0 +1,37 @@
+{
+  "name": "the-first",
+  "version": "0.1.0",
+  "description": "Human-in-the-loop project workflow skills for reliable AI-assisted software delivery.",
+  "author": {
+    "name": "railgun20001",
+    "url": "https://github.com/railgun20001"
+  },
+  "homepage": "https://github.com/railgun20001/the-first",
+  "repository": "https://github.com/railgun20001/the-first",
+  "license": "MIT",
+  "keywords": [
+    "agent-skills",
+    "requirements",
+    "planning",
+    "human-in-the-loop",
+    "software-development"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "The First",
+    "shortDescription": "Human-guided project delivery workflow",
+    "longDescription": "Clarify requirements, shape the experience, decide architecture and deployment, deliver testable feature slices, preserve feedback, and require human acceptance at meaningful gates.",
+    "developerName": "railgun20001",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Use The First to turn my idea into a validated project plan.",
+      "Resume this project from its The First status file."
+    ],
+    "websiteURL": "https://github.com/railgun20001/the-first"
+  }
+}

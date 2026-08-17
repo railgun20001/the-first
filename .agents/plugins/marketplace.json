@@ -1,0 +1,20 @@
+{
+  "name": "the-first",
+  "interface": {
+    "displayName": "The First"
+  },
+  "plugins": [
+    {
+      "name": "the-first",
+      "source": {
+        "source": "url",
+        "url": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}
