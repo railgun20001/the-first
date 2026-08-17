@@ -70,13 +70,14 @@ function validateMarkdownLinks(absolutePath) {
   }
 }
 
-const expectedVersion = "0.1.0";
+const expectedVersion = "0.1.1";
 const expectedSkills = [
   "clarify-project-requirements",
   "deploy-project",
   "design-product-experience",
   "design-technical-solution",
   "develop-in-stages",
+  "guard-artifact-scope",
   "track-project-progress",
   "using-the-first",
 ];
@@ -139,7 +140,21 @@ for (const required of [
   "$develop-in-stages",
   "$deploy-project",
   "$track-project-progress",
+  "$guard-artifact-scope",
+  "without adding a phase or acceptance gate",
 ]) check(usingSkill.includes(required), `using-the-first is missing contract: ${required}`);
+
+const guardSkill = read("skills/guard-artifact-scope/SKILL.md");
+for (const required of [
+  "Constraints may govern an artifact without becoming content in that artifact",
+  "Do not create a new phase, gate, status, or confirmation step",
+  "A documentation sentence can satisfy a requirement only when",
+  "Never report a non-documentation requirement as implemented",
+]) check(guardSkill.includes(required), `Artifact scope guard is missing contract: ${required}`);
+check(
+  read("skills/guard-artifact-scope/agents/openai.yaml").includes("allow_implicit_invocation: true"),
+  "Artifact scope guard must allow implicit invocation",
+);
 
 const requirementsSkill = read("skills/clarify-project-requirements/SKILL.md");
 for (const required of ["goal → verified facts", "Brand or public product name", "awaiting_user_acceptance"])
@@ -160,6 +175,7 @@ for (const required of [
   "Distill requested changes",
   "git diff --cached --check",
   "Never push unless",
+  "A documentation sentence can satisfy a requirement only when",
 ]) check(developmentSkill.includes(required), `Development workflow is missing contract: ${required}`);
 
 const deploymentSkill = read("skills/deploy-project/SKILL.md");
@@ -189,6 +205,16 @@ check(readmeZh.startsWith("# The First\n"), "Chinese README title must be exactl
 check(readmeEn.startsWith("# The First\n"), "English README title must be exactly The First");
 check(readmeZh.includes("[English](README.en.md)"), "Chinese README must link to English README");
 check(readmeEn.includes("[中文](README.md)"), "English README must link to Chinese README");
+check(readmeZh.includes("`guard-artifact-scope`"), "Chinese README must list guard-artifact-scope");
+check(readmeEn.includes("`guard-artifact-scope`"), "English README must list guard-artifact-scope");
+check(
+  !readmeZh.split("\n## ", 1)[0].includes("Superpowers"),
+  "Chinese README introduction must not frame The First through Superpowers",
+);
+check(
+  !readmeEn.split("\n## ", 1)[0].includes("Superpowers"),
+  "English README introduction must not frame The First through Superpowers",
+);
 check(read("LICENSE").startsWith("MIT License"), "LICENSE must contain the MIT license");
 
 for (const forbiddenPath of [".mcp.json", ".app.json", "hooks", "assets", "package.json"]) {

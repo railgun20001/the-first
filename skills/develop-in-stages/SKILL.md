@@ -50,6 +50,8 @@ Default to one active slice. A user may pre-authorize a specific bounded batch, 
 
 Do not use large code output as evidence of progress. A slice is implemented only when the repository contains the change.
 
+A documentation sentence can satisfy a requirement only when documentation is the intended outcome. For product, engineering, workflow, deployment, or runtime requirements, verify the corresponding implementation and evidence; do not mark them complete because their wording appears in a README, UI, plan, state file, or completion message. Apply `$guard-artifact-scope` when a changed artifact mixes these concerns.
+
 ## Verify proportionally to risk
 
 Before human review:

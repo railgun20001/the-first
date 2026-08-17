@@ -48,6 +48,12 @@ Do not ask the user for information that the project can answer. Ask only about 
 - For installation, external writes, pushes, or deployment, require matching authorization even if earlier phases are accepted.
 - Never interpret "continue" as permission for unbounded autonomous development. Continue only the current accepted phase or bounded feature slice.
 
+## Route artifact scope when needed
+
+When source material for a README, product description, UI copy, requirement or design source, technical or deployment document, release note, marketplace listing, handoff, or similar artifact mixes product outcomes with engineering, workflow, editorial, verification, or development-history constraints, route through `$guard-artifact-scope` before creating or materially revising the artifact.
+
+Invoke it implicitly by default; the user does not need to name it. Apply it within the current phase without adding a phase or acceptance gate, then continue through the responsible phase skill. Do not invoke it for routine code-only work whose artifact ownership and evidence are already unambiguous.
+
 ## Initialize a project
 
 When `THE-FIRST.md` is absent:

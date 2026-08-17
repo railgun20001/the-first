@@ -90,6 +90,8 @@ When the user requests a modification, write a concise proposed record containin
 
 Show the distilled meaning to the user before making it a project-wide rule. On future slices, read and apply all rules relevant to that scope.
 
+When feedback governs how an artifact should be produced, record it as a workflow or editorial rule rather than content to copy into that artifact. Apply `$guard-artifact-scope` when the rule's correct owner or user-facing relevance is unclear.
+
 ## Handle documentation modes safely
 
 - `index_only`: update links and state only. Do not move documents.

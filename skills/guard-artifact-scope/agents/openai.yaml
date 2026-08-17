@@ -1,0 +1,6 @@
+interface:
+  display_name: "Guard Artifact Scope"
+  short_description: "Keep process constraints out of user-facing artifacts"
+  default_prompt: "Use $guard-artifact-scope to keep this artifact focused on its readers and purpose."
+policy:
+  allow_implicit_invocation: true

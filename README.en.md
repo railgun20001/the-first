@@ -4,8 +4,6 @@
 
 The First is a set of software-delivery workflow skills for AI coding tools. It keeps implementation behind explicit requirement, experience, technical, deployment, and feature-slice gates while preserving human ownership of product decisions and acceptance.
 
-It is independent of Superpowers and is not an autonomous project-hosting system. It manages the development process: discover existing sources of truth, reduce requirement loss, retain feedback, control technical and deployment changes, and let a new AI conversation resume from project files.
-
 ## When to use it
 
 - Initialize a new project from an ambiguous idea.
@@ -50,12 +48,15 @@ The First does not run every stage continuously by default. It waits at phase an
 | Skill | Purpose |
 |---|---|
 | `using-the-first` | Detect a new or resumed project, read instructions, Git, `THE-FIRST.md`, and linked sources, then route to the current phase |
+| `guard-artifact-scope` | Separate product content, user boundaries, engineering constraints, workflow rules, and verification so development instructions do not masquerade as product outcomes |
 | `clarify-project-requirements` | Clarify outcomes, audience, scope, brand, engineering name, critical requirements, and acceptance criteria |
 | `design-product-experience` | Shape information architecture, visual direction, interaction states, and an optional minimal prototype |
 | `design-technical-solution` | Decide the stack, boundaries, component strategy, testing, preliminary deployment, and environment needs |
 | `develop-in-stages` | Deliver reviewable feature slices with tests, self-check steps, retained feedback, and focused commits |
 | `deploy-project` | Implement authorized deployment, migration, health checks, business acceptance, and rollback |
 | `track-project-progress` | Maintain cross-conversation state, source links, slices, feedback, and verification evidence |
+
+`guard-artifact-scope` is a cross-phase guard. The AI invokes it implicitly when an artifact mixes product content with development constraints; users do not need to trigger it, and it adds no separate phase or acceptance gate.
 
 ## Sources of truth and documentation modes
 
