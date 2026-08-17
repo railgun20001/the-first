@@ -1,0 +1,4 @@
+interface:
+  display_name: "Track Project Progress"
+  short_description: "Preserve decisions, feedback, evidence, and next steps"
+  default_prompt: "Use $track-project-progress to update this project state and handoff."
