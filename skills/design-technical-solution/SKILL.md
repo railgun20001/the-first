@@ -80,6 +80,8 @@ This is the accepted deployment design, not authorization to create infrastructu
 
 ## Reuse documentation and request acceptance
 
+Apply `dialogue_mode` through `$using-the-first`. In `deep` mode, finish its focused co-creation checkpoint before presenting the technical solution for acceptance; in `fast` mode, ask only unresolved decisions that would materially change the production shape or risk.
+
 Update existing architecture and deployment sources first. If no source can hold the solution, follow project conventions and fall back to `docs/project/technical-solution.md`. Keep preliminary deployment in the same source rather than creating a duplicate runbook prematurely.
 
 Present:

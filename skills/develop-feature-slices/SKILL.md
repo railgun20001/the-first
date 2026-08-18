@@ -37,6 +37,8 @@ For each slice, define:
 
 Order slices to validate high-impact assumptions early while preserving a usable repository. Present the slice list for acceptance before starting a large body of work.
 
+Apply `dialogue_mode` through `$using-the-first`. In `deep` mode, finish its focused co-creation checkpoint before accepting the initial or a materially changed slice plan; do not reopen accepted decisions for a routine slice.
+
 Default to one active slice. A user may pre-authorize a specific bounded batch, but each slice still needs its own verification, state, and functional commit. Never turn a bounded approval into indefinite autonomous execution.
 
 ## Implement one slice

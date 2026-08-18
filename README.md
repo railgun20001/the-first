@@ -43,6 +43,15 @@ start or resume
 
 The First does not run every stage continuously by default. It waits at phase and feature-slice gates. A user may pre-authorize a small, bounded batch, but that never becomes unlimited autonomous development.
 
+## Dialogue depth
+
+The project index records `dialogue_mode: fast|deep`:
+
+- `fast` is the default. The AI asks only about decisions that evidence cannot answer and that would block or materially change the result.
+- `deep` is an explicit co-creation mode for new products, experience direction, architecture, security, payment, or major slice changes. Before the relevant acceptance gate, the AI asks the few high-impact questions one at a time, explains why each matters, and provides a recommended default with its main trade-off.
+
+A deep checkpoint usually contains three to seven questions and stops earlier when fewer matter. After summarizing decided, deferred, and risky items, normal execution resumes. Dialogue depth does not add an acceptance gate or grant permission to write, install, push, or deploy.
+
 ## Skills
 
 | Skill | Purpose |

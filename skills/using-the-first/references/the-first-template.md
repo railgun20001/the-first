@@ -3,6 +3,7 @@ the_first_schema: 1
 phase: requirements
 status: in_progress
 documentation_mode: index_only
+dialogue_mode: fast
 active_slice: null
 updated_at: YYYY-MM-DD
 ---

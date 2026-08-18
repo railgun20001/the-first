@@ -66,6 +66,8 @@ Update an existing design source first. When no source can hold the decisions, u
 
 ## Close the phase with a human gate
 
+Apply `dialogue_mode` through `$using-the-first`. In `deep` mode, finish its focused co-creation checkpoint before presenting the experience for acceptance; in `fast` mode, ask only unresolved decisions that would materially change the product experience.
+
 Present:
 
 1. Accepted information structure and core flows.

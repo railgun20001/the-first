@@ -13,20 +13,22 @@ When the user provides only a product category such as "build an admin panel":
 
 1. If a project is available, inspect it before questioning the user.
 2. In the first response, ask only about the desired outcome, target users, essential workflow, success evidence, and whether an existing project or source exists.
-3. Ask a small, answerable set rather than the full lifecycle questionnaire.
+3. Ask a small, answerable set rather than the full lifecycle questionnaire. In `deep` dialogue mode, ask that set one question per message.
 4. Do not ask about frameworks, languages, databases, APIs, authentication mechanisms, hosting, containers, or deployment yet unless the user already stated one as a fixed constraint.
 5. Do not suggest default CRUD, a starter stack, or implementation as the fallback for uncertainty.
 6. Record unknowns and route to `$clarify-project-requirements`.
 
 Technical questions become appropriate only after product intent and discoverable project facts establish which decisions matter.
 
-Treat a first response that asks for a framework, language, database, API, authentication mechanism, hosting, container, or deployment preference as a workflow failure. End the first response after a small set such as:
+Treat a first response that asks for a framework, language, database, API, authentication mechanism, hosting, container, or deployment preference as a workflow failure. In `fast` mode, end the first response after a small set such as:
 
 - Who will use this and what outcome should improve?
 - Which one to three workflows matter most?
 - Is there an existing project, requirement source, or current product to inspect?
 
 Do not append technical questions to this set.
+
+In `deep` mode, ask only the highest-impact first question from this set and wait for the answer.
 
 ## Start with evidence
 
@@ -39,6 +41,25 @@ Before asking questions or proposing changes:
 5. Distinguish facts supported by project evidence from assumptions, proposals, and stale records.
 
 Do not ask the user for information that the project can answer. Ask only about product intent, trade-offs, acceptance, authority, or unresolved conflicts.
+
+## Choose the dialogue depth
+
+Read `dialogue_mode` from `THE-FIRST.md` when present. Support exactly:
+
+- `fast` (default): ask only questions that cannot be answered from evidence and would block or materially change the result, safety, authorization, or current gate.
+- `deep`: before requirement, experience, or technical acceptance, and before accepting an initial or materially changed slice plan, run one focused co-creation checkpoint.
+
+Treat a missing field as `fast` for backward compatibility. Change the mode only when the user explicitly requests a different dialogue depth. When project writes are authorized, persist the choice in `THE-FIRST.md`; otherwise apply it only to the current conversation.
+
+For a `deep` checkpoint:
+
+1. Inspect project evidence first and exclude discoverable or already accepted decisions.
+2. Identify only the current phase's highest-impact unknowns, usually three to seven; stop earlier when fewer matter.
+3. Ask one question per message. Explain briefly why it matters and provide a recommended default with its main trade-off.
+4. Wait for the answer before continuing down that decision path. Do not implement while the checkpoint is open.
+5. After the final answer, summarize what was decided, deferred, and still risky; update authorized truth sources and return to normal phase execution.
+
+Do not use `deep` mode to repeat accepted questions, fill a quota, or interrupt implementation after the checkpoint unless new evidence would materially change the outcome, safety, or required authorization. Dialogue depth does not add a phase or acceptance gate and never authorizes writes, installation, external effects, pushes, or deployment.
 
 ## Respect the requested stage
 

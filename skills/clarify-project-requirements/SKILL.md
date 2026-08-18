@@ -93,6 +93,8 @@ Update `$track-project-progress` with source links, accepted decisions, blockers
 
 ## Close the phase with a human gate
 
+Apply `dialogue_mode` through `$using-the-first`. In `deep` mode, finish its focused co-creation checkpoint before presenting the requirement baseline for acceptance; in `fast` mode, ask only unresolved decisions that would materially change direction.
+
 Before requesting acceptance, present in the project language:
 
 1. Confirmed goal and audience.

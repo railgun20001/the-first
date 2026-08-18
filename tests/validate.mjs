@@ -70,7 +70,7 @@ function validateMarkdownLinks(absolutePath) {
   }
 }
 
-const expectedVersion = "0.2.0";
+const expectedVersion = "0.3.0";
 const expectedSkills = [
   "clarify-project-requirements",
   "deploy-project",
@@ -144,6 +144,11 @@ for (const required of [
   "only when both conditions hold",
   "An artifact type alone is not a trigger",
   "without adding a phase or acceptance gate",
+  "## Choose the dialogue depth",
+  "dialogue_mode",
+  "usually three to seven",
+  "Ask one question per message",
+  "Dialogue depth does not add a phase or acceptance gate",
 ]) check(usingSkill.includes(required), `using-the-first is missing contract: ${required}`);
 
 const guardSkill = read("skills/guard-artifact-scope/SKILL.md");
@@ -162,15 +167,15 @@ check(
 );
 
 const requirementsSkill = read("skills/clarify-project-requirements/SKILL.md");
-for (const required of ["goal → verified facts", "Brand or public product name", "awaiting_user_acceptance"])
+for (const required of ["goal → verified facts", "Brand or public product name", "awaiting_user_acceptance", "dialogue_mode", "$using-the-first"])
   check(requirementsSkill.includes(required), `Requirement workflow is missing contract: ${required}`);
 
 const experienceSkill = read("skills/design-product-experience/SKILL.md");
-for (const required of ["static mock data only", "Do not implement a production backend", "explicit consent", "awaiting_user_acceptance"])
+for (const required of ["static mock data only", "Do not implement a production backend", "explicit consent", "awaiting_user_acceptance", "dialogue_mode", "$using-the-first"])
   check(experienceSkill.includes(required), `Experience workflow is missing contract: ${required}`);
 
 const technicalSkill = read("skills/design-technical-solution/SKILL.md");
-for (const required of ["Design preliminary deployment now", "Once the technical solution is accepted", "Ask for explicit consent"])
+for (const required of ["Design preliminary deployment now", "Once the technical solution is accepted", "Ask for explicit consent", "dialogue_mode", "$using-the-first"])
   check(technicalSkill.includes(required), `Technical workflow is missing contract: ${required}`);
 
 const developmentSkill = read("skills/develop-feature-slices/SKILL.md");
@@ -181,6 +186,8 @@ for (const required of [
   "git diff --cached --check",
   "Never push unless",
   "A documentation sentence can satisfy a requirement only when",
+  "dialogue_mode",
+  "$using-the-first",
 ]) check(developmentSkill.includes(required), `Development workflow is missing contract: ${required}`);
 
 const deploymentSkill = read("skills/deploy-project/SKILL.md");
@@ -188,7 +195,7 @@ for (const required of ["Request exact authorization", "Production technical val
   check(deploymentSkill.includes(required), `Deployment workflow is missing contract: ${required}`);
 
 const progressSkill = read("skills/track-project-progress/SKILL.md");
-for (const required of ["the_first_schema: 1", "Distill feedback", "structural_migration", "Next conversation"])
+for (const required of ["the_first_schema: 1", "dialogue_mode: fast", "Allowed dialogue modes", "Distill feedback", "structural_migration", "Next conversation"])
   check(progressSkill.includes(required), `Progress workflow is missing contract: ${required}`);
 
 const stateTemplate = read("skills/using-the-first/references/the-first-template.md");
@@ -197,6 +204,7 @@ for (const required of [
   "phase: requirements",
   "status: in_progress",
   "documentation_mode: index_only",
+  "dialogue_mode: fast",
   "active_slice: null",
   "## Sources of truth",
   "## User feedback and regression rules",
@@ -212,6 +220,8 @@ check(readmeZh.includes("[English](README.md) | 中文"), "Chinese README must l
 check(readmeEn.includes("English | [中文](README.zh-CN.md)"), "English README must link to Chinese README");
 check(readmeZh.includes("`guard-artifact-scope`"), "Chinese README must list guard-artifact-scope");
 check(readmeEn.includes("`guard-artifact-scope`"), "English README must list guard-artifact-scope");
+check(readmeZh.includes("dialogue_mode: fast|deep"), "Chinese README must document dialogue depth");
+check(readmeEn.includes("dialogue_mode: fast|deep"), "English README must document dialogue depth");
 check(
   !readmeZh.split("\n## ", 1)[0].includes("Superpowers"),
   "Chinese README introduction must not frame The First through Superpowers",
