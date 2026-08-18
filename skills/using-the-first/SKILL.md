@@ -50,9 +50,9 @@ Do not ask the user for information that the project can answer. Ask only about 
 
 ## Route artifact scope when needed
 
-When source material for a README, product description, UI copy, requirement or design source, technical or deployment document, release note, marketplace listing, handoff, or similar artifact mixes product outcomes with engineering, workflow, editorial, verification, or development-history constraints, route through `$guard-artifact-scope` before creating or materially revising the artifact.
+Route through `$guard-artifact-scope` only when both conditions hold: one artifact mixes reader-facing product content with engineering, workflow, editorial, verification, or development-history constraints; and a concrete unresolved risk exists of putting a statement in the wrong artifact or presenting unimplemented behavior as complete.
 
-Invoke it implicitly by default; the user does not need to name it. Apply it within the current phase without adding a phase or acceptance gate, then continue through the responsible phase skill. Do not invoke it for routine code-only work whose artifact ownership and evidence are already unambiguous.
+An artifact type alone is not a trigger. Do not invoke it for routine README, UI copy, requirement, technical-document, release-note, handoff, or code edits when the responsible phase skill already establishes ownership and evidence. Explicit user invocation always applies. Otherwise apply it within the current phase without adding a phase or acceptance gate, then continue through the responsible phase skill.
 
 ## Initialize a project
 

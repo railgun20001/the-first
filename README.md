@@ -56,7 +56,7 @@ The First does not run every stage continuously by default. It waits at phase an
 | `deploy-project` | Implement authorized deployment, migration, health checks, business acceptance, and rollback |
 | `track-project-progress` | Maintain cross-conversation state, source links, slices, feedback, and verification evidence |
 
-`guard-artifact-scope` is a cross-phase guard. The AI invokes it implicitly when an artifact mixes product content with development constraints; users do not need to trigger it, and it adds no separate phase or acceptance gate.
+`guard-artifact-scope` is a cross-phase guard. The AI invokes it implicitly only when one artifact mixes reader-facing product content with internal constraints and a concrete scope conflict remains. Routine document edits stay with their phase skill; explicit invocation remains available, and the guard adds no separate phase or acceptance gate.
 
 ## Sources of truth and documentation modes
 

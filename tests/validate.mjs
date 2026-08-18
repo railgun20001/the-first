@@ -141,16 +141,21 @@ for (const required of [
   "$deploy-project",
   "$track-project-progress",
   "$guard-artifact-scope",
+  "only when both conditions hold",
+  "An artifact type alone is not a trigger",
   "without adding a phase or acceptance gate",
 ]) check(usingSkill.includes(required), `using-the-first is missing contract: ${required}`);
 
 const guardSkill = read("skills/guard-artifact-scope/SKILL.md");
 for (const required of [
   "Constraints may govern an artifact without becoming content in that artifact",
+  "Otherwise invoke only when both conditions hold",
+  "Do not invoke it merely because the task edits a README",
   "Do not create a new phase, gate, status, or confirmation step",
   "A documentation sentence can satisfy a requirement only when",
   "Never report a non-documentation requirement as implemented",
 ]) check(guardSkill.includes(required), `Artifact scope guard is missing contract: ${required}`);
+check(guardSkill.replaceAll("\r\n", "\n").length <= 3000, "Artifact scope guard should stay below 3000 characters");
 check(
   read("skills/guard-artifact-scope/agents/openai.yaml").includes("allow_implicit_invocation: true"),
   "Artifact scope guard must allow implicit invocation",
