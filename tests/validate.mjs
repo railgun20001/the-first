@@ -70,7 +70,7 @@ function validateMarkdownLinks(absolutePath) {
   }
 }
 
-const expectedVersion = "0.3.0";
+const expectedVersion = "0.4.0";
 const expectedSkills = [
   "clarify-project-requirements",
   "deploy-project",
@@ -146,6 +146,10 @@ for (const required of [
   "without adding a phase or acceptance gate",
   "## Choose the dialogue depth",
   "dialogue_mode",
+  "`deep` (default)",
+  "Treat a missing field as `deep`",
+  "On the first The First response in each conversation",
+  "切换到快速推进模式",
   "usually three to seven",
   "Ask one question per message",
   "Dialogue depth does not add a phase or acceptance gate",
@@ -195,7 +199,7 @@ for (const required of ["Request exact authorization", "Production technical val
   check(deploymentSkill.includes(required), `Deployment workflow is missing contract: ${required}`);
 
 const progressSkill = read("skills/track-project-progress/SKILL.md");
-for (const required of ["the_first_schema: 1", "dialogue_mode: fast", "Allowed dialogue modes", "Distill feedback", "structural_migration", "Next conversation"])
+for (const required of ["the_first_schema: 1", "dialogue_mode: deep", "Allowed dialogue modes", "missing `dialogue_mode` in an older index as `deep`", "Distill feedback", "structural_migration", "Next conversation"])
   check(progressSkill.includes(required), `Progress workflow is missing contract: ${required}`);
 
 const stateTemplate = read("skills/using-the-first/references/the-first-template.md");
@@ -204,7 +208,7 @@ for (const required of [
   "phase: requirements",
   "status: in_progress",
   "documentation_mode: index_only",
-  "dialogue_mode: fast",
+  "dialogue_mode: deep",
   "active_slice: null",
   "## Sources of truth",
   "## User feedback and regression rules",
@@ -222,6 +226,9 @@ check(readmeZh.includes("`guard-artifact-scope`"), "Chinese README must list gua
 check(readmeEn.includes("`guard-artifact-scope`"), "English README must list guard-artifact-scope");
 check(readmeZh.includes("dialogue_mode: fast|deep"), "Chinese README must document dialogue depth");
 check(readmeEn.includes("dialogue_mode: fast|deep"), "English README must document dialogue depth");
+check(readmeZh.includes("`deep` 是默认的深度共创模式"), "Chinese README must document deep as the default");
+check(readmeZh.includes("切换到快速推进模式"), "Chinese README must document the fast-mode switch phrase");
+check(readmeEn.includes("`deep` is the default"), "English README must document deep as the default");
 check(
   !readmeZh.split("\n## ", 1)[0].includes("Superpowers"),
   "Chinese README introduction must not frame The First through Superpowers",

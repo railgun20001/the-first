@@ -7,6 +7,8 @@ description: Start or resume a human-governed software project workflow before s
 
 Keep the human responsible for product direction and acceptance. Prevent implementation from outrunning confirmed requirements, experience, technical constraints, deployment needs, and current project evidence.
 
+On the first The First response in each conversation, state the current dialogue mode before asking questions or proposing work. When the default `deep` mode applies, say in the user's language that deep co-creation is active and that they can say `切换到快速推进模式` to switch. Do not ask the user to choose a mode before continuing.
+
 ## Handle a vague idea safely
 
 When the user provides only a product category such as "build an admin panel":
@@ -46,10 +48,10 @@ Do not ask the user for information that the project can answer. Ask only about 
 
 Read `dialogue_mode` from `THE-FIRST.md` when present. Support exactly:
 
-- `fast` (default): ask only questions that cannot be answered from evidence and would block or materially change the result, safety, authorization, or current gate.
-- `deep`: before requirement, experience, or technical acceptance, and before accepting an initial or materially changed slice plan, run one focused co-creation checkpoint.
+- `deep` (default): before requirement, experience, or technical acceptance, and before accepting an initial or materially changed slice plan, run one focused co-creation checkpoint.
+- `fast`: ask only questions that cannot be answered from evidence and would block or materially change the result, safety, authorization, or current gate.
 
-Treat a missing field as `fast` for backward compatibility. Change the mode only when the user explicitly requests a different dialogue depth. When project writes are authorized, persist the choice in `THE-FIRST.md`; otherwise apply it only to the current conversation.
+Treat a missing field as `deep`. Change the mode only when the user explicitly requests a different dialogue depth. When project writes are authorized, persist the choice in `THE-FIRST.md`; otherwise apply it only to the current conversation.
 
 For a `deep` checkpoint:
 

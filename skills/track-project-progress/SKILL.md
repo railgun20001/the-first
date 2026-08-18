@@ -25,7 +25,7 @@ the_first_schema: 1
 phase: requirements
 status: in_progress
 documentation_mode: index_only
-dialogue_mode: fast
+dialogue_mode: deep
 active_slice: null
 updated_at: YYYY-MM-DD
 ---
@@ -60,7 +60,7 @@ Allowed dialogue modes:
 - `fast`
 - `deep`
 
-Treat a missing `dialogue_mode` in an older index as `fast`. Persist a change only when the user explicitly selects a different dialogue depth; the mode does not change phase, acceptance, or authorization state.
+Treat a missing `dialogue_mode` in an older index as `deep`. Persist a change only when the user explicitly selects a different dialogue depth; the mode does not change phase, acceptance, or authorization state.
 
 Do not mark a phase or feature accepted without explicit human acceptance. Do not infer acceptance from silence, a passing test, or permission to continue inspecting.
 
