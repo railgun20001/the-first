@@ -5,7 +5,7 @@ description: Shape and validate a software product's information architecture, v
 
 # Design Product Experience
 
-Validate what users will see and do without prematurely locking the production architecture.
+Validate what users will see and do early enough for people to change the product before backend work hardens the wrong behavior.
 
 ## Confirm the boundary
 
@@ -46,6 +46,14 @@ When a prototype is useful:
 7. Before installing any missing prototype tool, explain its purpose, exact command, scope, verification, and rollback, then obtain explicit consent.
 
 Do not make a prototype look complete by hiding missing states. Include the smallest set of states needed to validate the target interaction.
+
+## Prefer a usable frontend or client
+
+For user-facing products, default to a frontend/UI or game client that people can operate and review before, or alongside, substantial backend implementation. It must cover the accepted primary flow and its material states with mock or contract-shaped data; it is not a screenshot-only demo.
+
+Use the accepted interface to expose missing decisions early, collect corrections, and stabilize the client-to-server contract. For games, treat the playable client, interaction, and UI as this surface. In the exceptional frontend-first path, a complete accepted client flow may define the backend work that follows; record the data, authority, and failure-state assumptions that still need production implementation.
+
+Do not require a disposable prototype when an existing or planned production frontend/client can provide the same review surface. Do not claim mock-backed behavior is backend-complete, and do not let visual approval waive server authority, validation, security, persistence, or integration checks.
 
 ## Run human review
 

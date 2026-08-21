@@ -70,7 +70,7 @@ function validateMarkdownLinks(absolutePath) {
   }
 }
 
-const expectedVersion = "0.5.0";
+const expectedVersion = "0.5.1";
 const expectedSkills = [
   "clarify-project-requirements",
   "deploy-project",
@@ -176,11 +176,11 @@ for (const required of ["goal → verified facts", "Brand or public product name
   check(requirementsSkill.includes(required), `Requirement workflow is missing contract: ${required}`);
 
 const experienceSkill = read("skills/design-product-experience/SKILL.md");
-for (const required of ["static mock data only", "Do not implement a production backend", "explicit consent", "awaiting_user_acceptance", "dialogue_mode", "$using-the-first"])
+for (const required of ["static mock data only", "Do not implement a production backend", "Prefer a usable frontend or client", "not a screenshot-only demo", "complete accepted client flow may define the backend work that follows", "explicit consent", "awaiting_user_acceptance", "dialogue_mode", "$using-the-first"])
   check(experienceSkill.includes(required), `Experience workflow is missing contract: ${required}`);
 
 const technicalSkill = read("skills/design-technical-solution/SKILL.md");
-for (const required of ["Design preliminary deployment now", "Once the technical solution is accepted", "Ask for explicit consent", "dialogue_mode", "$using-the-first"])
+for (const required of ["Design preliminary deployment now", "frontend/UI or game client as an early or parallel delivery surface", "Once the technical solution is accepted", "Ask for explicit consent", "dialogue_mode", "$using-the-first"])
   check(technicalSkill.includes(required), `Technical workflow is missing contract: ${required}`);
 
 const developmentSkill = read("skills/develop-feature-slices/SKILL.md");
@@ -198,6 +198,7 @@ for (const required of [
   "is not `verified`",
   "dialogue_mode",
   "$using-the-first",
+  "operable frontend/UI or game-client slice before or alongside substantial backend-only work",
 ]) check(developmentSkill.includes(required), `Development workflow is missing contract: ${required}`);
 
 const deploymentSkill = read("skills/deploy-project/SKILL.md");
@@ -237,8 +238,10 @@ check(readmeEn.includes("dialogue_mode: fast|deep"), "English README must docume
 check(readmeZh.includes("`deep` 是默认的深度共创模式"), "Chinese README must document deep as the default");
 check(readmeZh.includes("切换到快速推进模式"), "Chinese README must document the fast-mode switch phrase");
 check(readmeZh.includes("任一范围内条目缺少证据时"), "Chinese README must document active-slice coverage enforcement");
+check(readmeZh.includes("前端/客户端先行验收"), "Chinese README must document frontend/client-first review");
 check(readmeEn.includes("`deep` is the default"), "English README must document deep as the default");
 check(readmeEn.includes("Any in-scope row without evidence"), "English README must document active-slice coverage enforcement");
+check(readmeEn.includes("Frontend/client-first review"), "English README must document frontend/client-first review");
 check(
   !readmeZh.split("\n## ", 1)[0].includes("Superpowers"),
   "Chinese README introduction must not frame The First through Superpowers",

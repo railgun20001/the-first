@@ -42,6 +42,8 @@ Resolve the accepted scope's material decisions:
 - Any new UI dependency, its accessibility and styling constraints, and why native or existing options are insufficient.
 - Accepted prototype behavior to preserve without copying disposable prototype architecture.
 
+For a user-facing product, plan the frontend/UI or game client as an early or parallel delivery surface, not a backend-completion demo. Define the smallest operable flow and contract-shaped mock data that enable human review; backend sequencing may follow the accepted client contract when that reduces product uncertainty. Keep server authority, validation, persistence, and integration as explicit later work rather than silently treating mocked UI as complete.
+
 ### Quality and verification
 
 - Performance, capacity, availability, offline, compatibility, localization, and accessibility mechanisms tied to accepted targets.

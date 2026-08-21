@@ -20,11 +20,12 @@ The First is a set of software-delivery workflow skills for AI coding tools. It 
 2. Reuse existing PRDs, tasks, designs, contracts, tests, configuration, and runbooks.
 3. Use `THE-FIRST.md` for process state and document links, not as a second requirements or architecture document.
 4. Require human acceptance at requirement, experience, technical, feature-slice, and deployment gates.
-5. Require matching authorization before installing software, writing externally, pushing code, or deploying.
-6. Map the active slice's requirements and acceptance checks to implementation surfaces and verification before coding; do not complete it without row-by-row evidence.
-7. Distill user corrections into durable rules before applying them to code, acceptance, and regression protection.
-8. Create one focused Git commit after a feature is verified and accepted.
-9. Report results, evidence, recommended user actions, and the suggested next step after meaningful work.
+5. For user-facing products, deliver an operable frontend/UI or game client before or alongside substantial backend work; use it for review, not as a post-backend demo.
+6. Require matching authorization before installing software, writing externally, pushing code, or deploying.
+7. Map the active slice's requirements and acceptance checks to implementation surfaces and verification before coding; do not complete it without row-by-row evidence.
+8. Distill user corrections into durable rules before applying them to code, acceptance, and regression protection.
+9. Create one focused Git commit after a feature is verified and accepted.
+10. Report results, evidence, recommended user actions, and the suggested next step after meaningful work.
 
 ## Workflow
 
@@ -33,7 +34,7 @@ start or resume
   → inspect project instructions, Git, and existing sources of truth
   → create the THE-FIRST.md index
   → clarify and accept requirements
-  → design and accept the experience, with an optional minimal prototype
+  → build or prototype an operable frontend/UI or game client for early review
   → decide architecture, component strategy, and preliminary deployment
   → inspect the environment and install missing items only with consent
   → lock the active slice's requirement, implementation, and verification mapping
@@ -109,6 +110,12 @@ The file contains:
 
 It never stores credentials, production secrets, long chat transcripts, or full copies of existing documents.
 
+## Frontend/client-first review
+
+For user-facing products, The First defaults to an operable frontend/UI or game client before or alongside substantial backend work. Review the accepted primary flow and material states with static or contract-shaped mock data, then let that accepted surface guide the API, server, and persistence work. The exceptional frontend-first path may complete the client flow before backend implementation.
+
+This is not permission to call a mock-backed screen backend-complete: server authority, validation, security, persistence, and integration still need their own implementation and evidence.
+
 ## Minimal prototypes
 
 Prototypes are optional and only validate functionality, information structure, and interaction:
@@ -118,7 +125,7 @@ Prototypes are optional and only validate functionality, information structure, 
 - Reuse an existing frontend's display capabilities when available.
 - Use plain HTML, CSS, and JavaScript for simple new-project prototypes.
 - Use Vue 3 and Vite only when interaction complexity justifies them.
-- Prototype tooling never becomes the production stack by default.
+- Prototype tooling never becomes the production stack by default; prefer a planned or existing client when it can provide the same review surface.
 
 ## Environment and installation consent
 
