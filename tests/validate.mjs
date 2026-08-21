@@ -151,7 +151,7 @@ for (const required of [
   "On the first The First response in each conversation",
   "切换到快速推进模式",
   "usually three to seven",
-  "Ask one question per message",
+  "Ask one or more independent questions in one message",
   "Dialogue depth does not add a phase or acceptance gate",
 ]) check(usingSkill.includes(required), `using-the-first is missing contract: ${required}`);
 

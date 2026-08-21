@@ -47,7 +47,7 @@ The First does not run every stage continuously by default. It waits at phase an
 
 The project index records `dialogue_mode: fast|deep`:
 
-- `deep` is the default for new products, experience direction, architecture, security, payment, or major slice changes. Before the relevant acceptance gate, the AI asks the few high-impact questions one at a time, explains why each matters, and provides a recommended default with its main trade-off.
+- `deep` is the default for new products, experience direction, architecture, security, payment, or major slice changes. Before the relevant acceptance gate, the AI asks one or more independent high-impact questions together, explains why each matters, and provides a recommended default with its main trade-off. It holds dependent questions for the next round.
 - `fast` asks only about decisions that evidence cannot answer and that would block or materially change the result. Switch to it by saying "Switch to fast mode."
 
 In its first response, The First states that deep co-creation is active and explains how to switch to fast mode. A deep checkpoint usually contains three to seven questions and stops earlier when fewer matter. After summarizing decided, deferred, and risky items, normal execution resumes. Dialogue depth does not add an acceptance gate or grant permission to write, install, push, or deploy.

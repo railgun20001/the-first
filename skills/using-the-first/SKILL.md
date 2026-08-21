@@ -15,7 +15,7 @@ When the user provides only a product category such as "build an admin panel":
 
 1. If a project is available, inspect it before questioning the user.
 2. In the first response, ask only about the desired outcome, target users, essential workflow, success evidence, and whether an existing project or source exists.
-3. Ask a small, answerable set rather than the full lifecycle questionnaire. In `deep` dialogue mode, ask that set one question per message.
+3. Ask a small, answerable set rather than the full lifecycle questionnaire. In `deep` dialogue mode, group independent questions in one message; ask separately only when a later question depends on the earlier answer.
 4. Do not ask about frameworks, languages, databases, APIs, authentication mechanisms, hosting, containers, or deployment yet unless the user already stated one as a fixed constraint.
 5. Do not suggest default CRUD, a starter stack, or implementation as the fallback for uncertainty.
 6. Record unknowns and route to `$clarify-project-requirements`.
@@ -30,7 +30,7 @@ Treat a first response that asks for a framework, language, database, API, authe
 
 Do not append technical questions to this set.
 
-In `deep` mode, ask only the highest-impact first question from this set and wait for the answer.
+In `deep` mode, ask the highest-impact independent questions from this set together, then wait for the answers before asking any dependent follow-up.
 
 ## Start with evidence
 
@@ -57,8 +57,8 @@ For a `deep` checkpoint:
 
 1. Inspect project evidence first and exclude discoverable or already accepted decisions.
 2. Identify only the current phase's highest-impact unknowns, usually three to seven; stop earlier when fewer matter.
-3. Ask one question per message. Explain briefly why it matters and provide a recommended default with its main trade-off.
-4. Wait for the answer before continuing down that decision path. Do not implement while the checkpoint is open.
+3. Ask one or more independent questions in one message. Explain briefly why each matters and provide a recommended default with its main trade-off; keep dependent questions for the next round.
+4. Wait for the answers before continuing down dependent decision paths. Do not implement while the checkpoint is open.
 5. After the final answer, summarize what was decided, deferred, and still risky; update authorized truth sources and return to normal phase execution.
 
 Do not use `deep` mode to repeat accepted questions, fill a quota, or interrupt implementation after the checkpoint unless new evidence would materially change the outcome, safety, or required authorization. Dialogue depth does not add a phase or acceptance gate and never authorizes writes, installation, external effects, pushes, or deployment.
