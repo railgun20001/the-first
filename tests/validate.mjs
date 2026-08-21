@@ -70,7 +70,7 @@ function validateMarkdownLinks(absolutePath) {
   }
 }
 
-const expectedVersion = "0.5.1";
+const expectedVersion = "0.5.2";
 const expectedSkills = [
   "clarify-project-requirements",
   "deploy-project",
@@ -199,6 +199,8 @@ for (const required of [
   "dialogue_mode",
   "$using-the-first",
   "operable frontend/UI or game-client slice before or alongside substantial backend-only work",
+  "A complete gameplay slice includes its player-facing visual/UI acceptance",
+  "explicit human acceptance of the operable client before completing or committing the slice",
 ]) check(developmentSkill.includes(required), `Development workflow is missing contract: ${required}`);
 
 const deploymentSkill = read("skills/deploy-project/SKILL.md");
@@ -206,7 +208,7 @@ for (const required of ["Request exact authorization", "Production technical val
   check(deploymentSkill.includes(required), `Deployment workflow is missing contract: ${required}`);
 
 const progressSkill = read("skills/track-project-progress/SKILL.md");
-for (const required of ["the_first_schema: 1", "dialogue_mode: deep", "Allowed dialogue modes", "missing `dialogue_mode` in an older index as `deep`", "## Enforce active slice coverage", "Distill feedback", "structural_migration", "Next conversation"])
+for (const required of ["the_first_schema: 1", "dialogue_mode: deep", "Allowed dialogue modes", "missing `dialogue_mode` in an older index as `deep`", "## Enforce active slice coverage", "explicit human visual/UI acceptance is recorded", "Distill feedback", "structural_migration", "Next conversation"])
   check(progressSkill.includes(required), `Progress workflow is missing contract: ${required}`);
 
 const stateTemplate = read("skills/using-the-first/references/the-first-template.md");
@@ -239,9 +241,11 @@ check(readmeZh.includes("`deep` 是默认的深度共创模式"), "Chinese READM
 check(readmeZh.includes("切换到快速推进模式"), "Chinese README must document the fast-mode switch phrase");
 check(readmeZh.includes("任一范围内条目缺少证据时"), "Chinese README must document active-slice coverage enforcement");
 check(readmeZh.includes("前端/客户端先行验收"), "Chinese README must document frontend/client-first review");
+check(readmeZh.includes("完整玩法切片在视觉/UI 验收通过前不得标记完成"), "Chinese README must document gameplay visual/UI gate");
 check(readmeEn.includes("`deep` is the default"), "English README must document deep as the default");
 check(readmeEn.includes("Any in-scope row without evidence"), "English README must document active-slice coverage enforcement");
 check(readmeEn.includes("Frontend/client-first review"), "English README must document frontend/client-first review");
+check(readmeEn.includes("complete gameplay slice remains incomplete until its visual/UI review is accepted"), "English README must document gameplay visual/UI gate");
 check(
   !readmeZh.split("\n## ", 1)[0].includes("Superpowers"),
   "Chinese README introduction must not frame The First through Superpowers",

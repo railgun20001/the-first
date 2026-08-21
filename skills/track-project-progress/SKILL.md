@@ -97,6 +97,8 @@ Keep an `Active slice coverage` table for only the current active slice. Use one
 
 An intended path is not implementation evidence. Keep the slice incomplete when an in-scope row is missing, lacks evidence, or is not `verified`; a passing test for another row and an AI completion claim do not close the gap. Use `deferred` only after the user accepts the scope change.
 
+For a complete gameplay slice, include visual/UI review of the operable client as an in-scope row. Do not record the slice as complete or clear its coverage until explicit human visual/UI acceptance is recorded.
+
 After slice acceptance and its functional commit, preserve a compact summary in the feature-slice row and clear the detailed coverage rows before activating the next slice. Do not grow the index into a second requirements document.
 
 ## Distill feedback for future slices

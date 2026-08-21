@@ -35,7 +35,7 @@ For each slice, define:
 - Relevant user-feedback rules and regression guards.
 - Dependencies on other slices and the safe rollback unit.
 
-Order slices to validate high-impact assumptions early while preserving a usable repository. For user-facing products, put an operable frontend/UI or game-client slice before or alongside substantial backend-only work, so people can review the primary flow and request changes while the contract is still cheap to change. It may use contract-shaped mock data, but must expose material states and must not be presented as backend-complete. Present the slice list for acceptance before starting a large body of work.
+Order slices to validate high-impact assumptions early while preserving a usable repository. For user-facing products, put an operable frontend/UI or game-client slice before or alongside substantial backend-only work, so people can review the primary flow and request changes while the contract is still cheap to change. It may use contract-shaped mock data, but must expose material states and must not be presented as backend-complete. A complete gameplay slice includes its player-facing visual/UI acceptance; do not mark it complete while that acceptance is pending. Present the slice list for acceptance before starting a large body of work.
 
 Apply `dialogue_mode` through `$using-the-first`. In `deep` mode, finish its focused co-creation checkpoint before accepting the initial or a materially changed slice plan; do not reopen accepted decisions for a routine slice.
 
@@ -91,6 +91,8 @@ Before requesting human review, reconcile every active coverage row:
 - Use `planned`, `implemented`, `verified`, or `blocked` as the row status. Use `deferred` only after the user accepts the corresponding scope change.
 
 An intended path is not implementation evidence. A passing check for one row does not prove another. If any in-scope row is missing evidence or is not `verified`, keep the slice incomplete and name the gap.
+
+For a complete gameplay slice, record visual/UI review as an in-scope verification row and obtain explicit human acceptance of the operable client before completing or committing the slice. Screenshots, static checks, and backend tests can support that review but cannot replace it.
 
 ## Provide human self-check and wait
 

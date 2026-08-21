@@ -20,7 +20,7 @@ The First is a set of software-delivery workflow skills for AI coding tools. It 
 2. Reuse existing PRDs, tasks, designs, contracts, tests, configuration, and runbooks.
 3. Use `THE-FIRST.md` for process state and document links, not as a second requirements or architecture document.
 4. Require human acceptance at requirement, experience, technical, feature-slice, and deployment gates.
-5. For user-facing products, deliver an operable frontend/UI or game client before or alongside substantial backend work; use it for review, not as a post-backend demo.
+5. For user-facing products, deliver an operable frontend/UI or game client before or alongside substantial backend work; use it for review, not as a post-backend demo. A complete gameplay slice remains incomplete until its visual/UI review is accepted.
 6. Require matching authorization before installing software, writing externally, pushing code, or deploying.
 7. Map the active slice's requirements and acceptance checks to implementation surfaces and verification before coding; do not complete it without row-by-row evidence.
 8. Distill user corrections into durable rules before applying them to code, acceptance, and regression protection.
@@ -133,7 +133,7 @@ The AI inspects only the environment required by an accepted technical solution.
 
 ## Staged development and Git
 
-Every feature slice has an observable result, scope, acceptance criteria, automated verification, and human self-check steps. Before coding, the AI maps stable requirement or acceptance references to intended implementation surfaces and verification. After coding, it records actual source or runtime evidence for every row. Any in-scope row without evidence keeps the slice incomplete. A slice is not complete before acceptance. When the user requests a correction, the AI records the underlying intent, durable rule, affected scope, and regression protection.
+Every feature slice has an observable result, scope, acceptance criteria, automated verification, and human self-check steps. Before coding, the AI maps stable requirement or acceptance references to intended implementation surfaces and verification. After coding, it records actual source or runtime evidence for every row. Any in-scope row without evidence keeps the slice incomplete. A complete gameplay slice must also record explicit human visual/UI acceptance of the operable client; screenshots, static checks, and backend tests do not replace it. A slice is not complete before acceptance. When the user requests a correction, the AI records the underlying intent, durable rule, affected scope, and regression protection.
 
 Only accepted features are committed. The AI inspects the working tree and index, stages only relevant paths or hunks, and preserves unrelated changes. Project code is not pushed unless the user explicitly authorizes that project push.
 
