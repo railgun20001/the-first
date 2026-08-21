@@ -51,7 +51,12 @@ Translate visible headings and table labels to the project language when creatin
 
 ## Feature slices
 
-| Slice | Observable outcome | Status | Acceptance source | Evidence | Commit |
+| Slice | Requirement refs | Observable outcome | Status | Acceptance source | Evidence | Commit |
+|---|---|---|---|---|---|---|
+
+## Active slice coverage
+
+| Requirement or acceptance ref | Source | Intended surface | Implementation evidence | Verification | Status |
 |---|---|---|---|---|---|
 
 ## User feedback and regression rules
@@ -76,5 +81,5 @@ Do not store long chat transcripts. Confirm the distilled rule with the user bef
 1. Read the applicable project instructions.
 2. Inspect current Git state and compare it with the active slice.
 3. Read the sources linked for the current phase.
-4. Read feedback rules affecting the next action.
+4. Reconcile active slice coverage and read feedback rules affecting the next action.
 5. Resume from: Clarify the project outcome and acceptance criteria.

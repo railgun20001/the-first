@@ -79,11 +79,25 @@ After meaningful work, update only affected sections:
 
 - Current phase, gate, blockers, and next action.
 - Accepted decisions with date, detailed source, and accepting party.
-- Feature slice outcome, status, acceptance source, verification evidence, and commit.
+- Feature slice requirement references, outcome, status, acceptance source, verification evidence, and commit.
 - Recent verification with the exact scope and boundary: static, unit, integration, browser, CI, staging, production technical, or production business acceptance.
 - External tracker summary when it changed.
 
 Never convert "planned", "implemented", "tests passed", "locally observed", and "accepted in production" into one generic completed state.
+
+## Enforce active slice coverage
+
+Keep an `Active slice coverage` table for only the current active slice. Use one row per accepted requirement or acceptance reference and record:
+
+- Authoritative source.
+- Intended implementation surface.
+- Actual implementation evidence.
+- Verification and its result.
+- Coverage status.
+
+An intended path is not implementation evidence. Keep the slice incomplete when an in-scope row is missing, lacks evidence, or is not `verified`; a passing test for another row and an AI completion claim do not close the gap. Use `deferred` only after the user accepts the scope change.
+
+After slice acceptance and its functional commit, preserve a compact summary in the feature-slice row and clear the detailed coverage rows before activating the next slice. Do not grow the index into a second requirements document.
 
 ## Distill feedback for future slices
 
@@ -115,7 +129,7 @@ End the `Next conversation` section with concrete instructions:
 1. What project instructions to read.
 2. Which Git state and active slice to verify.
 3. Which linked sources govern the current phase.
-4. Which feedback rules apply.
+4. Which active coverage rows and feedback rules apply.
 5. The single next action and current acceptance gate.
 
 Then report the result, evidence, recommended user action, and suggested next step in the project language.

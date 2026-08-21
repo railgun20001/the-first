@@ -71,14 +71,15 @@ Do not demand invented numeric targets. When a number matters but is unknown, ex
 
 For each critical requirement, record:
 
-- A stable identifier or unambiguous title.
+- A stable reference. Reuse an existing issue, specification, or heading reference; create a minimal `REQ-###` only when no stable reference exists.
 - The user-visible outcome.
 - Preconditions and important failure behavior.
-- An observable acceptance check.
+- Observable acceptance checks, with stable child references when one requirement has multiple independent checks.
 - The authoritative source and accepting party.
 - Whether it is accepted, proposed, deferred, or blocked.
 
 Keep acceptance technology-neutral unless the technology itself is an explicit constraint.
+Do not renumber an entire document merely to satisfy this workflow. Add references only where accepted implementation scope would otherwise be ambiguous.
 
 ## Reuse documentation
 

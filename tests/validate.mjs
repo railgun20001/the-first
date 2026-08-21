@@ -144,6 +144,7 @@ for (const required of [
   "only when both conditions hold",
   "An artifact type alone is not a trigger",
   "without adding a phase or acceptance gate",
+  "re-read every source section named by `Active slice coverage`",
   "## Choose the dialogue depth",
   "dialogue_mode",
   "`deep` (default)",
@@ -171,7 +172,7 @@ check(
 );
 
 const requirementsSkill = read("skills/clarify-project-requirements/SKILL.md");
-for (const required of ["goal → verified facts", "Brand or public product name", "awaiting_user_acceptance", "dialogue_mode", "$using-the-first"])
+for (const required of ["goal → verified facts", "Brand or public product name", "Reuse an existing issue, specification, or heading reference", "awaiting_user_acceptance", "dialogue_mode", "$using-the-first"])
   check(requirementsSkill.includes(required), `Requirement workflow is missing contract: ${required}`);
 
 const experienceSkill = read("skills/design-product-experience/SKILL.md");
@@ -190,6 +191,11 @@ for (const required of [
   "git diff --cached --check",
   "Never push unless",
   "A documentation sentence can satisfy a requirement only when",
+  "## Lock the active slice contract",
+  "`Active slice coverage`",
+  "Do not rely on an earlier summary",
+  "## Audit requirement coverage",
+  "is not `verified`",
   "dialogue_mode",
   "$using-the-first",
 ]) check(developmentSkill.includes(required), `Development workflow is missing contract: ${required}`);
@@ -199,7 +205,7 @@ for (const required of ["Request exact authorization", "Production technical val
   check(deploymentSkill.includes(required), `Deployment workflow is missing contract: ${required}`);
 
 const progressSkill = read("skills/track-project-progress/SKILL.md");
-for (const required of ["the_first_schema: 1", "dialogue_mode: deep", "Allowed dialogue modes", "missing `dialogue_mode` in an older index as `deep`", "Distill feedback", "structural_migration", "Next conversation"])
+for (const required of ["the_first_schema: 1", "dialogue_mode: deep", "Allowed dialogue modes", "missing `dialogue_mode` in an older index as `deep`", "## Enforce active slice coverage", "Distill feedback", "structural_migration", "Next conversation"])
   check(progressSkill.includes(required), `Progress workflow is missing contract: ${required}`);
 
 const stateTemplate = read("skills/using-the-first/references/the-first-template.md");
@@ -211,6 +217,8 @@ for (const required of [
   "dialogue_mode: deep",
   "active_slice: null",
   "## Sources of truth",
+  "## Active slice coverage",
+  "| Requirement or acceptance ref | Source | Intended surface | Implementation evidence | Verification | Status |",
   "## User feedback and regression rules",
   "## Recent verification evidence",
   "## Next conversation",
@@ -228,7 +236,9 @@ check(readmeZh.includes("dialogue_mode: fast|deep"), "Chinese README must docume
 check(readmeEn.includes("dialogue_mode: fast|deep"), "English README must document dialogue depth");
 check(readmeZh.includes("`deep` 是默认的深度共创模式"), "Chinese README must document deep as the default");
 check(readmeZh.includes("切换到快速推进模式"), "Chinese README must document the fast-mode switch phrase");
+check(readmeZh.includes("任一范围内条目缺少证据时"), "Chinese README must document active-slice coverage enforcement");
 check(readmeEn.includes("`deep` is the default"), "English README must document deep as the default");
+check(readmeEn.includes("Any in-scope row without evidence"), "English README must document active-slice coverage enforcement");
 check(
   !readmeZh.split("\n## ", 1)[0].includes("Superpowers"),
   "Chinese README introduction must not frame The First through Superpowers",

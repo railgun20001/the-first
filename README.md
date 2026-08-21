@@ -21,9 +21,10 @@ The First is a set of software-delivery workflow skills for AI coding tools. It 
 3. Use `THE-FIRST.md` for process state and document links, not as a second requirements or architecture document.
 4. Require human acceptance at requirement, experience, technical, feature-slice, and deployment gates.
 5. Require matching authorization before installing software, writing externally, pushing code, or deploying.
-6. Distill user corrections into durable rules before applying them to code, acceptance, and regression protection.
-7. Create one focused Git commit after a feature is verified and accepted.
-8. Report results, evidence, recommended user actions, and the suggested next step after meaningful work.
+6. Map the active slice's requirements and acceptance checks to implementation surfaces and verification before coding; do not complete it without row-by-row evidence.
+7. Distill user corrections into durable rules before applying them to code, acceptance, and regression protection.
+8. Create one focused Git commit after a feature is verified and accepted.
+9. Report results, evidence, recommended user actions, and the suggested next step after meaningful work.
 
 ## Workflow
 
@@ -35,6 +36,7 @@ start or resume
   → design and accept the experience, with an optional minimal prototype
   → decide architecture, component strategy, and preliminary deployment
   → inspect the environment and install missing items only with consent
+  → lock the active slice's requirement, implementation, and verification mapping
   → build, test, and accept one feature slice at a time
   → preserve user feedback as regression rules
   → commit each accepted feature
@@ -100,6 +102,7 @@ The file contains:
 - A source-of-truth index.
 - Accepted decisions and blockers.
 - Feature slices, acceptance, tests, and commit evidence.
+- Row-by-row requirement, implementation, and verification coverage for the active slice.
 - Distilled user feedback and regression rules.
 - External tracker links.
 - What the next conversation should read and do.
@@ -123,7 +126,7 @@ The AI inspects only the environment required by an accepted technical solution.
 
 ## Staged development and Git
 
-Every feature slice has an observable result, scope, acceptance criteria, automated verification, and human self-check steps. A slice is not complete before acceptance. When the user requests a correction, the AI records the underlying intent, durable rule, affected scope, and regression protection.
+Every feature slice has an observable result, scope, acceptance criteria, automated verification, and human self-check steps. Before coding, the AI maps stable requirement or acceptance references to intended implementation surfaces and verification. After coding, it records actual source or runtime evidence for every row. Any in-scope row without evidence keeps the slice incomplete. A slice is not complete before acceptance. When the user requests a correction, the AI records the underlying intent, durable rule, affected scope, and regression protection.
 
 Only accepted features are committed. The AI inspects the working tree and index, stages only relevant paths or hunks, and preserves unrelated changes. Project code is not pushed unless the user explicitly authorizes that project push.
 

@@ -26,7 +26,7 @@ Split accepted scope into the smallest slices that each deliver an observable us
 For each slice, define:
 
 - A stable slice ID and title.
-- Requirement and source-of-truth links.
+- Stable requirement and acceptance references with source-of-truth links.
 - Observable result and target user.
 - Included and explicitly excluded behavior.
 - Interface, data, visual, migration, deployment, and compatibility impact.
@@ -41,14 +41,28 @@ Apply `dialogue_mode` through `$using-the-first`. In `deep` mode, finish its foc
 
 Default to one active slice. A user may pre-authorize a specific bounded batch, but each slice still needs its own verification, state, and functional commit. Never turn a bounded approval into indefinite autonomous execution.
 
+## Lock the active slice contract
+
+Before editing production code, reconcile the `Active slice coverage` table in `THE-FIRST.md` after tracing the real implementation path. Keep one compact row for every accepted requirement or acceptance reference in the active slice, with:
+
+- Its authoritative source link.
+- The intended code, configuration, migration, interface, or runtime surface.
+- The verification that can prove the behavior.
+- Its current coverage status.
+
+Reuse existing issue, specification, and heading references. Create a new requirement ID only when the authoritative source has no stable reference. Do not copy requirement prose into the index.
+
+Every in-scope reference must have a source, intended surface, and verification path. Record exclusions and deferrals explicitly in the slice and authoritative source. If a reference is missing, sources conflict, or the intended evidence cannot be named, keep the slice in planning and do not edit production code.
+
 ## Implement one slice
 
 1. Mark only the selected slice active in `THE-FIRST.md`.
-2. Search for existing project patterns, shared components, platform features, standard-library support, and already-installed dependencies before adding code or packages.
-3. Make the minimum coherent change at the shared root cause or real system boundary. Do not add speculative abstractions or unrelated cleanup.
-4. Preserve product semantics, compatibility, validation, security, accessibility, and data safety.
-5. If a new dependency, runtime, service, migration, or external write becomes necessary but was not accepted, stop and return to `$design-technical-solution` or request the specific authorization.
-6. Keep detailed requirements and design decisions in their authoritative sources; update `THE-FIRST.md` only with links and slice state.
+2. Re-read every source section referenced by active slice coverage and confirm its requirement, acceptance check, intended surface, and verification. Do not rely on an earlier summary.
+3. Search for existing project patterns, shared components, platform features, standard-library support, and already-installed dependencies before adding code or packages.
+4. Make the minimum coherent change at the shared root cause or real system boundary. Do not add speculative abstractions or unrelated cleanup.
+5. Preserve product semantics, compatibility, validation, security, accessibility, and data safety.
+6. If a new dependency, runtime, service, migration, or external write becomes necessary but was not accepted, stop and return to `$design-technical-solution` or request the specific authorization.
+7. Keep detailed requirements and design decisions in their authoritative sources; update `THE-FIRST.md` only with links, coverage, and slice state.
 
 Do not use large code output as evidence of progress. A slice is implemented only when the repository contains the change.
 
@@ -67,6 +81,16 @@ Before human review:
 7. Do not lower thresholds, exclude files, weaken assertions, or label skipped checks as passed.
 
 Record exactly what was checked and distinguish static, unit, integration, browser, CI, staging, production technical, and production business evidence.
+
+## Audit requirement coverage
+
+Before requesting human review, reconcile every active coverage row:
+
+- Replace the intended surface with or supplement it using actual implementation evidence such as a file and symbol, configuration key, migration, generated artifact, or observed runtime surface.
+- Record the exact automated or human check and its result, including what it does not prove.
+- Use `planned`, `implemented`, `verified`, or `blocked` as the row status. Use `deferred` only after the user accepts the corresponding scope change.
+
+An intended path is not implementation evidence. A passing check for one row does not prove another. If any in-scope row is missing evidence or is not `verified`, keep the slice incomplete and name the gap.
 
 ## Provide human self-check and wait
 
@@ -114,7 +138,7 @@ If unrelated changes cannot be isolated safely, stop before committing and expla
 
 After the accepted functional commit:
 
-- Mark the slice complete and update its evidence.
+- Mark the slice complete, summarize its requirement references and evidence in the feature-slice row, and clear detailed active coverage before the next slice starts.
 - Reconcile any external authoritative tracker when authorized.
 - Report the result, commit, validation, recommended user action, and next slice suggestion.
 - Start the next slice only after its scope is accepted or covered by a prior bounded authorization.

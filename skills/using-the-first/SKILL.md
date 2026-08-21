@@ -100,11 +100,12 @@ If the user cannot answer an early product question, record the unknown and offe
 When `THE-FIRST.md` exists:
 
 1. Validate its frontmatter and current phase.
-2. Compare its active slice, evidence, and commits with actual Git and linked sources.
-3. Read feedback rules relevant to the current scope.
-4. Surface missing links, stale state, or conflicts before proceeding.
-5. Summarize the last accepted result, current gate, blockers, and next action.
-6. Route using the current phase:
+2. Compare its active slice, coverage rows, evidence, and commits with actual Git and linked sources.
+3. When a slice is active, re-read every source section named by `Active slice coverage`; do not rely on the index or an earlier conversation summary as requirement evidence.
+4. Read feedback rules relevant to the current scope.
+5. Surface missing links, stale state, or conflicts before proceeding.
+6. Summarize the last accepted result, current gate, blockers, and next action.
+7. Route using the current phase:
 
 | Phase | Skill |
 |---|---|
