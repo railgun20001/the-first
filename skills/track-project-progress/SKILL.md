@@ -1,6 +1,6 @@
 ---
 name: track-project-progress
-description: Maintain the version-controlled THE-FIRST.md project index so decisions, document authority, human acceptance, feature slices, user feedback, verification evidence, commits, trackers, blockers, and next actions survive conversation changes. Use after meaningful project progress, phase or slice transitions, accepted feedback, commits, deployment events, or when a user asks for status, handoff, continuity, or progress reconciliation.
+description: Maintain the version-controlled THE-FIRST.md project index so decisions, document authority, feature slices, user feedback, verification evidence, commits, trackers, blockers, and next actions survive conversation changes. Use after meaningful project progress, phase or slice transitions, feedback, commits, deployment events, or when a user asks for status, handoff, continuity, or progress reconciliation.
 ---
 
 # Track Project Progress
@@ -62,7 +62,7 @@ Allowed dialogue modes:
 
 Treat a missing `dialogue_mode` in an older index as `deep`. Persist a change only when the user explicitly selects a different dialogue depth; the mode does not change phase, acceptance, or authorization state.
 
-Do not mark a phase or feature accepted without explicit human acceptance. Do not infer acceptance from silence, a passing test, or permission to continue inspecting.
+Treat legacy acceptance statuses as compatibility values only. Mark a phase or feature slice complete when the model has sufficient evidence for every applicable acceptance check; do not infer completion from silence, a passing test for a different scope, or unsupported confidence.
 
 ## Keep a domain-specific source index
 
@@ -78,9 +78,9 @@ Record each source with its domain, authority, scope, current status, and last c
 After meaningful work, update only affected sections:
 
 - Current phase, gate, blockers, and next action.
-- Accepted decisions with date, detailed source, and accepting party.
-- Feature slice requirement references, outcome, status, acceptance source, verification evidence, and commit.
-- Recent verification with the exact scope and boundary: static, unit, integration, browser, CI, staging, production technical, or production business acceptance.
+- Evidence-backed decisions with date, detailed source, and decision source.
+- Feature slice requirement references, outcome, status, completion evidence, verification evidence, and commit.
+- Recent verification with the exact scope and boundary: static, unit, integration, browser, CI, staging, production technical, or production business verification.
 - External tracker summary when it changed.
 
 Never convert "planned", "implemented", "tests passed", "locally observed", and "accepted in production" into one generic completed state.
@@ -97,9 +97,9 @@ Keep an `Active slice coverage` table for only the current active slice. Use one
 
 An intended path is not implementation evidence. Keep the slice incomplete when an in-scope row is missing, lacks evidence, or is not `verified`; a passing test for another row and an AI completion claim do not close the gap. Use `deferred` only after the user accepts the scope change.
 
-For a complete gameplay slice, include visual/UI review of the operable client as an in-scope row. Do not record the slice as complete or clear its coverage until explicit human visual/UI acceptance is recorded.
+For a complete gameplay slice, include runtime or browser visual/UI evidence of the operable client as an in-scope row. Do not record the slice as complete or clear its coverage until that evidence is sufficient for the stated behavior.
 
-After slice acceptance and its functional commit, preserve a compact summary in the feature-slice row and clear the detailed coverage rows before activating the next slice. Do not grow the index into a second requirements document.
+After slice completion and its functional commit, preserve a compact summary in the feature-slice row and clear the detailed coverage rows before activating the next slice. Do not grow the index into a second requirements document.
 
 ## Distill feedback for future slices
 
@@ -112,7 +112,7 @@ When the user requests a modification, write a concise proposed record containin
 5. Updated acceptance criteria, automated test, self-check, or visual regression guard.
 6. Resolution status and commit when complete.
 
-Show the distilled meaning to the user before making it a project-wide rule. On future slices, read and apply all rules relevant to that scope.
+Show the distilled meaning to the user when a correction would become a project-wide rule. On future slices, read and apply all rules relevant to that scope.
 
 When feedback governs how an artifact should be produced, record it as a workflow or editorial rule rather than content to copy into that artifact. Apply `$guard-artifact-scope` when the rule's correct owner or user-facing relevance is unclear.
 
@@ -132,6 +132,6 @@ End the `Next conversation` section with concrete instructions:
 2. Which Git state and active slice to verify.
 3. Which linked sources govern the current phase.
 4. Which active coverage rows and feedback rules apply.
-5. The single next action and current acceptance gate.
+5. The single next action and current evidence gate.
 
 Then report the result, evidence, recommended user action, and suggested next step in the project language.

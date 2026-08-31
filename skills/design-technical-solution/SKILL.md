@@ -1,6 +1,6 @@
 ---
 name: design-technical-solution
-description: Design and baseline a software project's production technology, architecture, data and API boundaries, security, SEO, performance, business and visual component strategy, testing, build, preliminary deployment, and required environment. Use after requirements and experience are accepted, when a major technical direction changes, when deployment assumptions are unclear, or before installing project tooling. Inspect the actual environment only after the solution is accepted, and install nothing without explicit consent.
+description: Design and baseline a software project's production technology, architecture, data and API boundaries, security, SEO, performance, business and visual component strategy, testing, build, preliminary deployment, and required environment. Use after requirements and experience are evidenced, when a major technical direction changes, when deployment assumptions are unclear, or before installing project tooling. Inspect the actual environment only after the solution is evidenced, and install nothing without explicit consent.
 ---
 
 # Design Technical Solution
@@ -9,8 +9,8 @@ Choose the minimum production solution that satisfies accepted outcomes and cons
 
 ## Confirm prerequisites and evidence
 
-1. Read project instructions, `THE-FIRST.md`, accepted requirements, accepted experience decisions, and relevant feedback rules.
-2. Confirm requirement and experience gates are accepted or explicitly skipped by the user. Keep discussion-only options unaccepted when gates are still open.
+1. Read project instructions, `THE-FIRST.md`, evidence-backed requirements, evidence-backed experience decisions, and relevant feedback rules.
+2. Confirm requirement and experience gates have sufficient evidence or were explicitly skipped. Keep discussion-only options unconfirmed when gates are still open.
 3. Inspect current source, dependencies, lock files, schemas, migrations, interfaces, tests, build, CI, containers, infrastructure, deployment notes, and actual runtime evidence available.
 4. Identify existing components and platform capabilities before proposing new dependencies or duplicated abstractions.
 5. Separate required quality attributes from speculative scale, premature optimization, and preferences.
@@ -42,7 +42,7 @@ Resolve the accepted scope's material decisions:
 - Any new UI dependency, its accessibility and styling constraints, and why native or existing options are insufficient.
 - Accepted prototype behavior to preserve without copying disposable prototype architecture.
 
-For a user-facing product, plan the frontend/UI or game client as an early or parallel delivery surface, not a backend-completion demo. Define the smallest operable flow and contract-shaped mock data that enable human review; backend sequencing may follow the accepted client contract when that reduces product uncertainty. Keep server authority, validation, persistence, and integration as explicit later work rather than silently treating mocked UI as complete.
+For a user-facing product, plan the frontend/UI or game client as an early or parallel delivery surface, not a backend-completion demo. Define the smallest operable flow and contract-shaped mock data that enable evidence-based review; backend sequencing may follow the evidenced client contract when that reduces product uncertainty. Keep server authority, validation, persistence, and integration as explicit later work rather than silently treating mocked UI as complete.
 
 ### Quality and verification
 
@@ -80,9 +80,9 @@ Decide enough deployment detail to prove the architecture is deliverable:
 
 This is the accepted deployment design, not authorization to create infrastructure, publish artifacts, migrate data, or deploy.
 
-## Reuse documentation and request acceptance
+## Reuse documentation and close with evidence
 
-Apply `dialogue_mode` through `$using-the-first`. In `deep` mode, finish its focused co-creation checkpoint before presenting the technical solution for acceptance; in `fast` mode, ask only unresolved decisions that would materially change the production shape or risk.
+Apply `dialogue_mode` through `$using-the-first`. In `deep` mode, finish its focused co-creation checkpoint before completing the technical solution; in `fast` mode, ask only unresolved decisions that would materially change the production shape or risk.
 
 Update existing architecture and deployment sources first. If no source can hold the solution, follow project conventions and fall back to `docs/project/technical-solution.md`. Keep preliminary deployment in the same source rather than creating a duplicate runbook prematurely.
 
@@ -95,11 +95,11 @@ Present:
 5. Rejected alternatives and revisit conditions where material.
 6. Assumptions, risks, and evidence that still require environment or integration checks.
 
-Set the phase to `awaiting_user_acceptance`. Do not inspect broadly for speculative tools or install anything before explicit acceptance.
+When the documented solution covers all material constraints and risks with sufficient evidence, mark the phase complete. Do not inspect broadly for speculative tools or install anything before the solution is complete.
 
-## Inspect the environment after acceptance
+## Inspect the environment after completion
 
-Once the technical solution is accepted, inspect only what it requires:
+Once the technical solution is complete, inspect only what it requires:
 
 - Operating system, architecture, permission boundary, and shell.
 - Git, required runtimes, package managers, compilers, SDKs, browsers, and supported versions.
@@ -130,4 +130,4 @@ After authorized installation, verify the actual version and behavior, record ev
 
 When the environment outcome is recorded, route to `$develop-feature-slices`.
 
-Report the result, evidence, recommended user review, suggested next step, and any acceptance or installation request in the project language.
+Report the result, evidence, optional user review, suggested next step, completion judgment, and any installation request in the project language.

@@ -1,11 +1,11 @@
 ---
 name: using-the-first
-description: Start or resume a human-governed software project workflow before substantial implementation begins. Use when a user wants to initialize a project, turn an idea into software, add a substantial feature, recover work in a new conversation, or explicitly asks to use The First. Inspect project truth sources and THE-FIRST.md, restore current decisions and feedback, enforce phase gates, and route to the appropriate The First skill. For a vague initial idea, do not ask about frameworks, databases, APIs, hosting, or deployment in the first response.
+description: Start or resume an evidence-governed software project workflow before substantial implementation begins. Use when a user wants to initialize a project, turn an idea into software, add a substantial feature, recover work in a new conversation, or explicitly asks to use The First. Inspect project truth sources and THE-FIRST.md, restore current decisions and feedback, enforce evidence gates, and route to the appropriate The First skill. For a vague initial idea, do not ask about frameworks, databases, APIs, hosting, or deployment in the first response.
 ---
 
 # Using The First
 
-Keep the human responsible for product direction and acceptance. Prevent implementation from outrunning confirmed requirements, experience, technical constraints, deployment needs, and current project evidence.
+Keep the user responsible for product direction and authorization. Prevent implementation from outrunning confirmed requirements, experience, technical constraints, deployment needs, and current project evidence. The model decides completion from sufficient, correctly scoped evidence; user review is optional supporting evidence, never a completion gate.
 
 On the first The First response in each conversation, state the current dialogue mode before asking questions or proposing work. When the default `deep` mode applies, say in the user's language that deep co-creation is active and that they can say `切换到快速推进模式` to switch. Do not ask the user to choose a mode before continuing.
 
@@ -61,7 +61,7 @@ For a `deep` checkpoint:
 4. Wait for the answers before continuing down dependent decision paths. Do not implement while the checkpoint is open.
 5. After the final answer, summarize what was decided, deferred, and still risky; update authorized truth sources and return to normal phase execution.
 
-Do not use `deep` mode to repeat accepted questions, fill a quota, or interrupt implementation after the checkpoint unless new evidence would materially change the outcome, safety, or required authorization. Dialogue depth does not add a phase or acceptance gate and never authorizes writes, installation, external effects, pushes, or deployment.
+Do not use `deep` mode to repeat resolved questions, fill a quota, or interrupt implementation after the checkpoint unless new evidence would materially change the outcome, safety, or required authorization. Dialogue depth does not add a phase or evidence gate and never authorizes writes, installation, external effects, pushes, or deployment.
 
 ## Respect the requested stage
 
@@ -75,7 +75,7 @@ Do not use `deep` mode to repeat accepted questions, fill a quota, or interrupt 
 
 Route through `$guard-artifact-scope` only when both conditions hold: one artifact mixes reader-facing product content with engineering, workflow, editorial, verification, or development-history constraints; and a concrete unresolved risk exists of putting a statement in the wrong artifact or presenting unimplemented behavior as complete.
 
-An artifact type alone is not a trigger. Do not invoke it for routine README, UI copy, requirement, technical-document, release-note, handoff, or code edits when the responsible phase skill already establishes ownership and evidence. Explicit user invocation always applies. Otherwise apply it within the current phase without adding a phase or acceptance gate, then continue through the responsible phase skill.
+An artifact type alone is not a trigger. Do not invoke it for routine README, UI copy, requirement, technical-document, release-note, handoff, or code edits when the responsible phase skill already establishes ownership and evidence. Explicit user invocation always applies. Otherwise apply it within the current phase without adding a phase or evidence gate, then continue through the responsible phase skill.
 
 ## Initialize a project
 
@@ -129,16 +129,16 @@ Use the frontmatter status values exactly:
 - `blocked`
 - `complete`
 
-Only explicit human acceptance can change a phase or feature slice from `awaiting_user_acceptance` to `accepted`. A passing test, a plausible implementation, or an agent's confidence is not human acceptance.
+Treat legacy `awaiting_user_acceptance` and `accepted` states as compatibility values, not required gates. Mark a phase or feature slice complete only after the model verifies every applicable acceptance check with sufficient evidence; a passing test, plausible implementation, or unsupported confidence alone is insufficient.
 
 Apply these transitions:
 
-1. Requirements accepted → experience.
-2. Experience accepted or explicitly skipped → technical.
-3. Technical solution accepted → targeted environment inspection and installation consent.
+1. Requirements evidenced → experience.
+2. Experience evidenced or explicitly skipped → technical.
+3. Technical solution evidenced → targeted environment inspection and installation consent.
 4. Environment outcome recorded → development.
-5. All accepted feature slices → deployment readiness.
-6. Authorized deployment and acceptance, or an explicitly accepted handoff-only outcome → complete.
+5. All evidenced feature slices → deployment readiness.
+6. Authorized deployment with sufficient production evidence, or a documented handoff-only outcome → complete.
 
 ## Report meaningful steps
 
@@ -146,8 +146,8 @@ After completing meaningful work, respond in the user's or project's language wi
 
 1. **Result** — what actually changed or was decided.
 2. **Evidence** — what was inspected or verified, and what remains unverified.
-3. **Recommended user action** — the shortest useful review or self-check.
+3. **Recommended user action** — an optional shortest useful review or self-check.
 4. **Suggested next step** — what should happen next and why.
-5. **Awaiting confirmation** — include only at a phase or slice gate.
+5. **Completion judgment** — state the evidence, remaining boundary, and why it is sufficient or insufficient.
 
 Never report planned work as completed, static evidence as runtime proof, or local checks as production acceptance.

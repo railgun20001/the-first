@@ -1,6 +1,6 @@
 ---
 name: deploy-project
-description: Prepare, authorize, execute, verify, document, and roll back software deployment using the accepted technical and preliminary deployment solution. Use when accepted feature slices are ready for staging or production, when deployment configuration or runbooks must be completed, or when a user asks to build, publish artifacts, push images, migrate data, provision infrastructure, change DNS, or release. Require explicit authorization for each material external effect and distinguish local, CI, staging, production technical, and business acceptance evidence.
+description: Prepare, authorize, execute, verify, document, and roll back software deployment using an evidence-backed technical and preliminary deployment solution. Use when complete feature slices are ready for staging or production, when deployment configuration or runbooks must be completed, or when a user asks to build, publish artifacts, push images, migrate data, provision infrastructure, change DNS, or release. Require explicit authorization for each material external effect and distinguish local, CI, staging, production technical, and business evidence.
 ---
 
 # Deploy Project
@@ -11,8 +11,8 @@ Turn an accepted deployment design into controlled, observable implementation. P
 
 Before changing deployment state:
 
-1. Read project instructions, `THE-FIRST.md`, accepted requirements, technical and deployment sources, active feedback rules, completed feature slices, and existing runbooks.
-2. Verify all release-scope slices are accepted and committed. List intentionally deferred work.
+1. Read project instructions, `THE-FIRST.md`, evidence-backed requirements, technical and deployment sources, active feedback rules, completed feature slices, and existing runbooks.
+2. Verify all release-scope slices are complete and committed. List intentionally deferred work.
 3. Inspect actual Git branch, commit, tags, working tree, build configuration, lock files, migrations, infrastructure, CI, container definitions, and deployment target state available to the current environment.
 4. Confirm the preliminary deployment design still matches the current code, data, environment, target platform, and user intent.
 5. Surface stale assumptions, uncommitted release changes, missing access, or environment drift before proceeding.
@@ -29,7 +29,7 @@ Resolve and document:
 - Configuration owners, secret references, certificates, and environment-specific values. Never copy secret values into project documents or `THE-FIRST.md`.
 - Persistent storage, database migrations, compatibility window, maintenance needs, and irreversible operations.
 - Backup scope, restore check, rollback unit, rollback trigger, and recovery owner.
-- Health checks, logs, metrics, alerts, smoke tests, and business acceptance path.
+- Health checks, logs, metrics, alerts, smoke tests, and business verification path.
 - Expected user impact, downtime, communication, and release window where relevant.
 
 Reuse an existing deployment source or runbook. If none exists, follow project conventions and fall back to `docs/project/deployment-runbook.md`.
@@ -85,22 +85,22 @@ Classify results separately:
 - Local validation.
 - CI validation.
 - Staging technical validation.
-- Staging business acceptance.
+- Staging business verification.
 - Production technical validation.
-- Production business acceptance.
+- Production business verification.
 
 For each, record target, source version, command or check, result, timestamp, observer, and remaining boundary. A successful health endpoint does not prove the complete business workflow.
 
 Update the existing release record or runbook, and use `$track-project-progress` to link the evidence, deployment status, rollback outcome, and next action. Commit deployment configuration or documentation changes as focused repository changes before pushing when the project requires Git delivery.
 
-## Close with human acceptance or handoff
+## Close with evidence or handoff
 
 Provide:
 
 1. **Result** — what was built, changed, deployed, rolled back, or left ready for an operator.
 2. **Evidence** — each verified environment and its actual scope.
-3. **Recommended user action** — the shortest production or handoff business acceptance path.
-4. **Suggested next step** — accept, monitor, roll back, or resolve a named issue.
-5. **Awaiting confirmation** — request production business acceptance when deployment occurred.
+3. **Recommended user action** — an optional shortest production or handoff business verification path.
+4. **Suggested next step** — monitor, roll back, or resolve a named issue.
+5. **Completion judgment** — state the production evidence and remaining boundary.
 
-Mark the project `complete` only after the user accepts the delivered outcome or explicitly accepts a documented deployment handoff without execution. Otherwise preserve the exact deployment phase, blocker, and next action.
+Mark the project `complete` when the authorized delivered outcome has sufficient, correctly scoped evidence, or when a documented handoff-only outcome is ready. Otherwise preserve the exact deployment phase, blocker, and next action.

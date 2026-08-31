@@ -1,6 +1,6 @@
 ---
 name: develop-feature-slices
-description: Plan, implement, test, review, and commit one observable feature slice at a time after requirements, experience, technical solution, and environment outcomes are accepted. Use when production development is authorized, when a large feature needs decomposition, when resuming an active slice, or when user corrections must be distilled into durable regression rules. Require human slice acceptance by default, provide self-check steps, preserve unrelated Git work, and create focused functional commits.
+description: Plan, implement, test, review, and commit one observable feature slice at a time after requirements, experience, technical solution, and environment outcomes have sufficient evidence. Use when production development is authorized, when a large feature needs decomposition, when resuming an active slice, or when user corrections must be distilled into durable regression rules. Let the model close a slice from evidence, provide optional self-check steps, preserve unrelated Git work, and create focused functional commits.
 ---
 
 # Develop Feature Slices
@@ -31,11 +31,11 @@ For each slice, define:
 - Included and explicitly excluded behavior.
 - Interface, data, visual, migration, deployment, and compatibility impact.
 - Acceptance criteria, including failure and boundary behavior.
-- Automated verification and the shortest human self-check.
+- Automated verification and an optional shortest self-check.
 - Relevant user-feedback rules and regression guards.
 - Dependencies on other slices and the safe rollback unit.
 
-Order slices to validate high-impact assumptions early while preserving a usable repository. For user-facing products, put an operable frontend/UI or game-client slice before or alongside substantial backend-only work, so people can review the primary flow and request changes while the contract is still cheap to change. It may use contract-shaped mock data, but must expose material states and must not be presented as backend-complete. A complete gameplay slice includes its player-facing visual/UI acceptance; do not mark it complete while that acceptance is pending. Present the slice list for acceptance before starting a large body of work.
+Order slices to validate high-impact assumptions early while preserving a usable repository. For user-facing products, put an operable frontend/UI or game-client slice before or alongside substantial backend-only work, so people can review the primary flow and request changes while the contract is still cheap to change. It may use contract-shaped mock data, but must expose material states and must not be presented as backend-complete. A complete gameplay slice includes evidence of its player-facing visual/UI behavior. Present the slice list when a material decision remains unresolved; otherwise begin the authorized slice.
 
 Apply `dialogue_mode` through `$using-the-first`. In `deep` mode, finish its focused co-creation checkpoint before accepting the initial or a materially changed slice plan; do not reopen accepted decisions for a routine slice.
 
@@ -70,7 +70,7 @@ A documentation sentence can satisfy a requirement only when documentation is th
 
 ## Verify proportionally to risk
 
-Before human review:
+Before completion judgment:
 
 1. Add the smallest meaningful automated test that would fail if the behavior regressed.
 2. Protect existing invariants with regression coverage where the change can break them.
@@ -84,7 +84,7 @@ Record exactly what was checked and distinguish static, unit, integration, brows
 
 ## Audit requirement coverage
 
-Before requesting human review, reconcile every active coverage row:
+Before making a completion judgment, reconcile every active coverage row:
 
 - Replace the intended surface with or supplement it using actual implementation evidence such as a file and symbol, configuration key, migration, generated artifact, or observed runtime surface.
 - Record the exact automated or human check and its result, including what it does not prove.
@@ -92,21 +92,21 @@ Before requesting human review, reconcile every active coverage row:
 
 An intended path is not implementation evidence. A passing check for one row does not prove another. If any in-scope row is missing evidence or is not `verified`, keep the slice incomplete and name the gap.
 
-For a complete gameplay slice, record visual/UI review as an in-scope verification row and obtain explicit human acceptance of the operable client before completing or committing the slice. Screenshots, static checks, and backend tests can support that review but cannot replace it.
+For a complete gameplay slice, record visual/UI evidence for the operable client as an in-scope verification row. Screenshots, static checks, and backend tests may each prove only their stated scope; use the smallest runtime or browser evidence needed for the actual player-facing behavior.
 
-## Provide human self-check and wait
+## Report completion judgment
 
 Report in the project language:
 
 1. **Result** — the observable slice outcome and actual files or surfaces changed.
 2. **Evidence** — checks run, outcomes, and unverified boundaries.
-3. **Recommended user action** — the shortest reproducible self-check, including setup, actions, and expected result.
-4. **Suggested next step** — accept, request changes, or investigate a named boundary.
-5. **Awaiting confirmation** — request explicit slice acceptance unless the exact slice was pre-authorized for automatic acceptance.
+3. **Recommended user action** — an optional shortest reproducible self-check, including setup, actions, and expected result.
+4. **Suggested next step** — continue, request changes, or investigate a named boundary.
+5. **Completion judgment** — state why evidence is sufficient, or name the exact missing evidence.
 
-Always end an implementation or verification reply with a separate **Suggested next step** line. It must name the immediate authorized action and boundary; do not omit it when the result, self-check, or acceptance request already appears above.
+Always end an implementation or verification reply with a separate **Suggested next step** line. It must name the immediate authorized action and boundary; do not omit it when the result, self-check, or completion judgment already appears above.
 
-Do not mark the slice complete or create its completion commit before acceptance.
+Do not mark the slice complete or create its completion commit before every in-scope row is verified with sufficient evidence.
 
 ## Distill requested changes
 
@@ -123,9 +123,9 @@ When the user requests a modification:
 
 Do not preserve raw conversation dumps. On every later slice, reread rules that affect its scope.
 
-## Create the functional commit after acceptance
+## Create the functional commit after completion
 
-Once the slice is accepted:
+Once the model judges the slice complete:
 
 1. Re-inspect `git status`, unstaged diff, staged diff, and affected untracked files.
 2. Update authoritative docs and `THE-FIRST.md` with the accepted outcome, checks, slice ID, and `commit: pending`.
@@ -145,5 +145,5 @@ After the accepted functional commit:
 - Mark the slice complete, summarize its requirement references and evidence in the feature-slice row, and clear detailed active coverage before the next slice starts.
 - Reconcile any external authoritative tracker when authorized.
 - Report the result, commit, validation, recommended user action, and next slice suggestion.
-- Start the next slice only after its scope is accepted or covered by a prior bounded authorization.
+- Start the next slice only after its scope has sufficient evidence or is covered by a prior bounded authorization.
 - When all accepted slices are complete, route to `$deploy-project` for deployment readiness; do not deploy automatically.

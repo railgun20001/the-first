@@ -24,7 +24,7 @@ Translate visible headings and table labels to the project language when creatin
 
 ## Current phase
 
-- Last accepted result: None
+- Last completed result: None
 - Current gate: Requirements in progress
 - Blockers: None confirmed
 - Next action: Clarify the project outcome and acceptance criteria
@@ -39,9 +39,9 @@ Translate visible headings and table labels to the project language when creatin
 | Deployment | Unknown | Unknown | Missing | YYYY-MM-DD |
 | Testing | Unknown | Unknown | Missing | YYYY-MM-DD |
 
-## Accepted decisions
+## Evidence-backed decisions
 
-| Date | Decision | Detailed source | Accepted by |
+| Date | Decision | Detailed source | Evidence |
 |---|---|---|---|
 
 ## Open questions
@@ -51,7 +51,7 @@ Translate visible headings and table labels to the project language when creatin
 
 ## Feature slices
 
-| Slice | Requirement refs | Observable outcome | Status | Acceptance source | Evidence | Commit |
+| Slice | Requirement refs | Observable outcome | Status | Completion evidence | Evidence | Commit |
 |---|---|---|---|---|---|---|
 
 ## Active slice coverage
@@ -64,7 +64,7 @@ Translate visible headings and table labels to the project language when creatin
 | Date | Feedback summary | Durable rule or exception | Affected scope | Acceptance or regression guard | Status | Commit |
 |---|---|---|---|---|---|---|
 
-Do not store long chat transcripts. Confirm the distilled rule with the user before treating it as project-wide authority.
+Do not store long chat transcripts. Confirm a user correction when treating it as a project-wide rule.
 
 ## External trackers
 

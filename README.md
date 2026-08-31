@@ -2,7 +2,7 @@
 
 English | [中文](README.zh-CN.md)
 
-The First is a set of software-delivery workflow skills for AI coding tools. It keeps implementation behind explicit requirement, experience, technical, deployment, and feature-slice gates while preserving human ownership of product decisions and acceptance.
+The First is a set of software-delivery workflow skills for AI coding tools. It keeps implementation behind explicit requirement, experience, technical, deployment, and feature-slice evidence gates while preserving user ownership of product decisions and authorization.
 
 ## When to use it
 
@@ -19,12 +19,12 @@ The First is a set of software-delivery workflow skills for AI coding tools. It 
 1. Inspect before asking; confirm outcomes before choosing technology.
 2. Reuse existing PRDs, tasks, designs, contracts, tests, configuration, and runbooks.
 3. Use `THE-FIRST.md` for process state and document links, not as a second requirements or architecture document.
-4. Require human acceptance at requirement, experience, technical, feature-slice, and deployment gates.
-5. For user-facing products, deliver an operable frontend/UI or game client before or alongside substantial backend work; use it for review, not as a post-backend demo. A complete gameplay slice remains incomplete until its visual/UI review is accepted.
+4. Let the model decide completion only from sufficient, correctly scoped evidence at requirement, experience, technical, feature-slice, and deployment gates.
+5. For user-facing products, deliver an operable frontend/UI or game client before or alongside substantial backend work; use it as runtime evidence, not as a post-backend demo. A complete gameplay slice remains incomplete until its visual/UI behavior has sufficient evidence.
 6. Require matching authorization before installing software, writing externally, pushing code, or deploying.
 7. Map the active slice's requirements and acceptance checks to implementation surfaces and verification before coding; do not complete it without row-by-row evidence.
 8. Distill user corrections into durable rules before applying them to code, acceptance, and regression protection.
-9. Create one focused Git commit after a feature is verified and accepted.
+9. Create one focused Git commit after a feature is verified and complete.
 10. Report results, evidence, recommended user actions, and the suggested next step after meaningful work.
 
 ## Workflow
@@ -33,27 +33,27 @@ The First is a set of software-delivery workflow skills for AI coding tools. It 
 start or resume
   → inspect project instructions, Git, and existing sources of truth
   → create the THE-FIRST.md index
-  → clarify and accept requirements
-  → build or prototype an operable frontend/UI or game client for early review
+  → clarify requirements with evidence
+  → build or prototype an operable frontend/UI or game client for early evidence
   → decide architecture, component strategy, and preliminary deployment
   → inspect the environment and install missing items only with consent
   → lock the active slice's requirement, implementation, and verification mapping
-  → build, test, and accept one feature slice at a time
+  → build, test, and complete one feature slice at a time
   → preserve user feedback as regression rules
-  → commit each accepted feature
+  → commit each complete feature
   → deploy, verify, and prepare rollback only with authorization
 ```
 
-The First does not run every stage continuously by default. It waits at phase and feature-slice gates. A user may pre-authorize a small, bounded batch, but that never becomes unlimited autonomous development.
+The First does not run every stage continuously by default. It stops only for unresolved decisions, missing evidence, or missing authorization—not for a mandatory manual validation step. A user may pre-authorize a small, bounded batch, but that never becomes unlimited autonomous development.
 
 ## Dialogue depth
 
 The project index records `dialogue_mode: fast|deep`:
 
-- `deep` is the default for new products, experience direction, architecture, security, payment, or major slice changes. Before the relevant acceptance gate, the AI asks one or more independent high-impact questions together, explains why each matters, and provides a recommended default with its main trade-off. It holds dependent questions for the next round.
+- `deep` is the default for new products, experience direction, architecture, security, payment, or major slice changes. Before the relevant evidence gate, the AI asks one or more independent high-impact questions together, explains why each matters, and provides a recommended default with its main trade-off. It holds dependent questions for the next round.
 - `fast` asks only about decisions that evidence cannot answer and that would block or materially change the result. Switch to it by saying "Switch to fast mode."
 
-In its first response, The First states that deep co-creation is active and explains how to switch to fast mode. A deep checkpoint usually contains three to seven questions and stops earlier when fewer matter. After summarizing decided, deferred, and risky items, normal execution resumes. Dialogue depth does not add an acceptance gate or grant permission to write, install, push, or deploy.
+In its first response, The First states that deep co-creation is active and explains how to switch to fast mode. A deep checkpoint usually contains three to seven questions and stops earlier when fewer matter. After summarizing decided, deferred, and risky items, normal execution resumes. Dialogue depth does not add an evidence gate or grant permission to write, install, push, or deploy.
 
 ## Skills
 
@@ -64,18 +64,18 @@ In its first response, The First states that deep co-creation is active and expl
 | `clarify-project-requirements` | Clarify outcomes, audience, scope, brand, engineering name, critical requirements, and acceptance criteria |
 | `design-product-experience` | Shape information architecture, visual direction, interaction states, and an optional minimal prototype |
 | `design-technical-solution` | Decide the stack, boundaries, component strategy, testing, preliminary deployment, and environment needs |
-| `develop-feature-slices` | Deliver reviewable feature slices with tests, self-check steps, retained feedback, and focused commits |
-| `deploy-project` | Implement authorized deployment, migration, health checks, business acceptance, and rollback |
+| `develop-feature-slices` | Deliver evidence-backed feature slices with tests, optional self-check steps, retained feedback, and focused commits |
+| `deploy-project` | Implement authorized deployment, migration, health checks, business verification, and rollback |
 | `track-project-progress` | Maintain cross-conversation state, source links, slices, feedback, and verification evidence |
 
-`guard-artifact-scope` is a cross-phase guard. The AI invokes it implicitly only when one artifact mixes reader-facing product content with internal constraints and a concrete scope conflict remains. Routine document edits stay with their phase skill; explicit invocation remains available, and the guard adds no separate phase or acceptance gate.
+`guard-artifact-scope` is a cross-phase guard. The AI invokes it implicitly only when one artifact mixes reader-facing product content with internal constraints and a concrete scope conflict remains. Routine document edits stay with their phase skill; explicit invocation remains available, and the guard adds no separate phase or evidence gate.
 
 ## Sources of truth and documentation modes
 
 The First does not assume one document represents an entire project. It identifies authority by domain, for example:
 
-- Requirements: accepted PRD, issue, or product decision.
-- Experience: accepted design, design system, or existing product behavior.
+- Requirements: requirement source, issue, or product decision.
+- Experience: design, design system, or existing product behavior.
 - Interfaces and data: schemas, types, migrations, and contract tests.
 - Deployment: infrastructure, CI, containers, and runbooks.
 - Implementation state: source, tests, commits, and observed runtime evidence.
@@ -101,8 +101,8 @@ The file contains:
 
 - Project identity and current phase.
 - A source-of-truth index.
-- Accepted decisions and blockers.
-- Feature slices, acceptance, tests, and commit evidence.
+- Evidence-backed decisions and blockers.
+- Feature slices, completion evidence, tests, and commit evidence.
 - Row-by-row requirement, implementation, and verification coverage for the active slice.
 - Distilled user feedback and regression rules.
 - External tracker links.
@@ -110,9 +110,9 @@ The file contains:
 
 It never stores credentials, production secrets, long chat transcripts, or full copies of existing documents.
 
-## Frontend/client-first review
+## Frontend/client-first evidence
 
-For user-facing products, The First defaults to an operable frontend/UI or game client before or alongside substantial backend work. Review the accepted primary flow and material states with static or contract-shaped mock data, then let that accepted surface guide the API, server, and persistence work. The exceptional frontend-first path may complete the client flow before backend implementation.
+For user-facing products, The First defaults to an operable frontend/UI or game client before or alongside substantial backend work. Verify the primary flow and material states with static or contract-shaped mock data, then let that evidence-backed surface guide the API, server, and persistence work. The exceptional frontend-first path may complete the client flow before backend implementation.
 
 This is not permission to call a mock-backed screen backend-complete: server authority, validation, security, persistence, and integration still need their own implementation and evidence.
 
@@ -129,13 +129,13 @@ Prototypes are optional and only validate functionality, information structure, 
 
 ## Environment and installation consent
 
-The AI inspects only the environment required by an accepted technical solution. Missing items are classified as required, recommended, optional, or unverifiable, with purpose, commands, impact, verification, and rollback. The user may approve all, approve selected items, install manually, decline, or revise the technical solution.
+The AI inspects only the environment required by a complete technical solution. Missing items are classified as required, recommended, optional, or unverifiable, with purpose, commands, impact, verification, and rollback. The user may approve all, approve selected items, install manually, decline, or revise the technical solution.
 
 ## Staged development and Git
 
-Every feature slice has an observable result, scope, acceptance criteria, automated verification, and human self-check steps. Before coding, the AI maps stable requirement or acceptance references to intended implementation surfaces and verification. After coding, it records actual source or runtime evidence for every row. Any in-scope row without evidence keeps the slice incomplete. A complete gameplay slice must also record explicit human visual/UI acceptance of the operable client; screenshots, static checks, and backend tests do not replace it. A slice is not complete before acceptance. When the user requests a correction, the AI records the underlying intent, durable rule, affected scope, and regression protection.
+Every feature slice has an observable result, scope, acceptance criteria, automated verification, and optional self-check steps. Before coding, the AI maps stable requirement or acceptance references to intended implementation surfaces and verification. After coding, it records actual source or runtime evidence for every row. Any in-scope row without evidence keeps the slice incomplete. A complete gameplay slice must also record sufficient visual/UI runtime evidence of the operable client; screenshots, static checks, and backend tests each prove only their stated scope. The model marks a slice complete only after every applicable row is verified. When the user requests a correction, the AI records the underlying intent, durable rule, affected scope, and regression protection.
 
-Only accepted features are committed. The AI inspects the working tree and index, stages only relevant paths or hunks, and preserves unrelated changes. Project code is not pushed unless the user explicitly authorizes that project push.
+Only complete features are committed. The AI inspects the working tree and index, stages only relevant paths or hunks, and preserves unrelated changes. Project code is not pushed unless the user explicitly authorizes that project push.
 
 ## Installation
 
@@ -190,7 +190,7 @@ Uninstalling the plugin does not remove `THE-FIRST.md` or project documentation.
 
 ## Boundaries
 
-The First has no background service, telemetry, MCP server, database, or autonomous hosting. It does not force GitHub Issues, Linear, a framework, a UI library, or a deployment vendor, and it never creates cloud resources, changes production, or accepts work without matching authorization.
+The First has no background service, telemetry, MCP server, database, or autonomous hosting. It does not force GitHub Issues, Linear, a framework, a UI library, or a deployment vendor, and it never creates cloud resources or changes production without matching authorization.
 
 ## License
 

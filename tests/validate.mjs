@@ -133,7 +133,7 @@ const usingSkill = read("skills/using-the-first/SKILL.md");
 for (const required of [
   "Start with evidence",
   "Treat a first response that asks for a framework",
-  "Only explicit human acceptance",
+  "The model decides completion from sufficient, correctly scoped evidence",
   "$clarify-project-requirements",
   "$design-product-experience",
   "$design-technical-solution",
@@ -143,7 +143,7 @@ for (const required of [
   "$guard-artifact-scope",
   "only when both conditions hold",
   "An artifact type alone is not a trigger",
-  "without adding a phase or acceptance gate",
+  "without adding a phase or evidence gate",
   "re-read every source section named by `Active slice coverage`",
   "## Choose the dialogue depth",
   "dialogue_mode",
@@ -153,7 +153,7 @@ for (const required of [
   "切换到快速推进模式",
   "usually three to seven",
   "Ask one or more independent questions in one message",
-  "Dialogue depth does not add a phase or acceptance gate",
+  "Dialogue depth does not add a phase or evidence gate",
 ]) check(usingSkill.includes(required), `using-the-first is missing contract: ${required}`);
 
 const guardSkill = read("skills/guard-artifact-scope/SKILL.md");
@@ -172,15 +172,15 @@ check(
 );
 
 const requirementsSkill = read("skills/clarify-project-requirements/SKILL.md");
-for (const required of ["goal → verified facts", "Brand or public product name", "Reuse an existing issue, specification, or heading reference", "awaiting_user_acceptance", "dialogue_mode", "$using-the-first"])
+for (const required of ["goal → verified facts", "Brand or public product name", "Reuse an existing issue, specification, or heading reference", "sufficient source evidence", "dialogue_mode", "$using-the-first"])
   check(requirementsSkill.includes(required), `Requirement workflow is missing contract: ${required}`);
 
 const experienceSkill = read("skills/design-product-experience/SKILL.md");
-for (const required of ["static mock data only", "Do not implement a production backend", "Prefer a usable frontend or client", "not a screenshot-only demo", "complete accepted client flow may define the backend work that follows", "explicit consent", "awaiting_user_acceptance", "dialogue_mode", "$using-the-first"])
+for (const required of ["static mock data only", "Do not implement a production backend", "Prefer a usable frontend or client", "not a screenshot-only demo", "complete evidenced client flow may define the backend work that follows", "explicit consent", "sufficient evidence", "dialogue_mode", "$using-the-first"])
   check(experienceSkill.includes(required), `Experience workflow is missing contract: ${required}`);
 
 const technicalSkill = read("skills/design-technical-solution/SKILL.md");
-for (const required of ["Design preliminary deployment now", "frontend/UI or game client as an early or parallel delivery surface", "Once the technical solution is accepted", "Ask for explicit consent", "dialogue_mode", "$using-the-first"])
+for (const required of ["Design preliminary deployment now", "frontend/UI or game client as an early or parallel delivery surface", "Once the technical solution is complete", "Ask for explicit consent", "dialogue_mode", "$using-the-first"])
   check(technicalSkill.includes(required), `Technical workflow is missing contract: ${required}`);
 
 const developmentSkill = read("skills/develop-feature-slices/SKILL.md");
@@ -199,17 +199,17 @@ for (const required of [
   "dialogue_mode",
   "$using-the-first",
   "operable frontend/UI or game-client slice before or alongside substantial backend-only work",
-  "A complete gameplay slice includes its player-facing visual/UI acceptance",
-  "explicit human acceptance of the operable client before completing or committing the slice",
+  "A complete gameplay slice includes evidence of its player-facing visual/UI behavior",
+  "Do not mark the slice complete or create its completion commit before every in-scope row is verified",
   "Always end an implementation or verification reply with a separate **Suggested next step** line.",
 ]) check(developmentSkill.includes(required), `Development workflow is missing contract: ${required}`);
 
 const deploymentSkill = read("skills/deploy-project/SKILL.md");
-for (const required of ["Request exact authorization", "Production technical validation", "Production business acceptance", "rollback"])
+for (const required of ["Request exact authorization", "Production technical validation", "Production business verification", "rollback"])
   check(deploymentSkill.includes(required), `Deployment workflow is missing contract: ${required}`);
 
 const progressSkill = read("skills/track-project-progress/SKILL.md");
-for (const required of ["the_first_schema: 1", "dialogue_mode: deep", "Allowed dialogue modes", "missing `dialogue_mode` in an older index as `deep`", "## Enforce active slice coverage", "explicit human visual/UI acceptance is recorded", "Distill feedback", "structural_migration", "Next conversation"])
+for (const required of ["the_first_schema: 1", "dialogue_mode: deep", "Allowed dialogue modes", "missing `dialogue_mode` in an older index as `deep`", "## Enforce active slice coverage", "runtime or browser visual/UI evidence", "Distill feedback", "structural_migration", "Next conversation"])
   check(progressSkill.includes(required), `Progress workflow is missing contract: ${required}`);
 
 const stateTemplate = read("skills/using-the-first/references/the-first-template.md");
@@ -241,12 +241,12 @@ check(readmeEn.includes("dialogue_mode: fast|deep"), "English README must docume
 check(readmeZh.includes("`deep` 是默认的深度共创模式"), "Chinese README must document deep as the default");
 check(readmeZh.includes("切换到快速推进模式"), "Chinese README must document the fast-mode switch phrase");
 check(readmeZh.includes("任一范围内条目缺少证据时"), "Chinese README must document active-slice coverage enforcement");
-check(readmeZh.includes("前端/客户端先行验收"), "Chinese README must document frontend/client-first review");
-check(readmeZh.includes("完整玩法切片在视觉/UI 验收通过前不得标记完成"), "Chinese README must document gameplay visual/UI gate");
+check(readmeZh.includes("前端/客户端先行证据"), "Chinese README must document frontend/client-first evidence");
+check(readmeZh.includes("完整玩法切片在其视觉/UI 行为具备充分证据前不得标记完成"), "Chinese README must document gameplay visual/UI gate");
 check(readmeEn.includes("`deep` is the default"), "English README must document deep as the default");
 check(readmeEn.includes("Any in-scope row without evidence"), "English README must document active-slice coverage enforcement");
-check(readmeEn.includes("Frontend/client-first review"), "English README must document frontend/client-first review");
-check(readmeEn.includes("complete gameplay slice remains incomplete until its visual/UI review is accepted"), "English README must document gameplay visual/UI gate");
+check(readmeEn.includes("Frontend/client-first evidence"), "English README must document frontend/client-first evidence");
+check(readmeEn.includes("complete gameplay slice remains incomplete until its visual/UI behavior has sufficient evidence"), "English README must document gameplay visual/UI gate");
 check(
   !readmeZh.split("\n## ", 1)[0].includes("Superpowers"),
   "Chinese README introduction must not frame The First through Superpowers",

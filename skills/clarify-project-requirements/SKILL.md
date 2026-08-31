@@ -92,9 +92,9 @@ Apply this order:
 
 Update `$track-project-progress` with source links, accepted decisions, blockers, and the next gate. Do not copy detailed requirement content into `THE-FIRST.md`.
 
-## Close the phase with a human gate
+## Close the phase with evidence
 
-Apply `dialogue_mode` through `$using-the-first`. In `deep` mode, finish its focused co-creation checkpoint before presenting the requirement baseline for acceptance; in `fast` mode, ask only unresolved decisions that would materially change direction.
+Apply `dialogue_mode` through `$using-the-first`. In `deep` mode, finish its focused co-creation checkpoint before baselining requirements; in `fast` mode, ask only unresolved decisions that would materially change direction.
 
 Before requesting acceptance, present in the project language:
 
@@ -106,6 +106,6 @@ Before requesting acceptance, present in the project language:
 6. Whether a minimal prototype is recommended and what it would validate.
 7. Updated sources and unverified boundaries.
 
-Set the phase to `awaiting_user_acceptance`. Do not route to production technical design or implementation until the user accepts the requirement baseline. After acceptance, route to `$design-product-experience`.
+When requirements have sufficient source evidence and no material unresolved conflict, mark the phase complete and route to `$design-product-experience`. Ask the user only for a decision that evidence cannot resolve, not to validate completed work.
 
-Report the result, evidence, recommended user review, suggested next step, and the acceptance request.
+Report the result, evidence, optional user review, suggested next step, and completion judgment.
