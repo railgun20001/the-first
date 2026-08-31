@@ -104,6 +104,8 @@ Report in the project language:
 4. **Suggested next step** — accept, request changes, or investigate a named boundary.
 5. **Awaiting confirmation** — request explicit slice acceptance unless the exact slice was pre-authorized for automatic acceptance.
 
+Always end an implementation or verification reply with a separate **Suggested next step** line. It must name the immediate authorized action and boundary; do not omit it when the result, self-check, or acceptance request already appears above.
+
 Do not mark the slice complete or create its completion commit before acceptance.
 
 ## Distill requested changes

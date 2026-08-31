@@ -201,6 +201,7 @@ for (const required of [
   "operable frontend/UI or game-client slice before or alongside substantial backend-only work",
   "A complete gameplay slice includes its player-facing visual/UI acceptance",
   "explicit human acceptance of the operable client before completing or committing the slice",
+  "Always end an implementation or verification reply with a separate **Suggested next step** line.",
 ]) check(developmentSkill.includes(required), `Development workflow is missing contract: ${required}`);
 
 const deploymentSkill = read("skills/deploy-project/SKILL.md");
