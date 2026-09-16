@@ -48,6 +48,8 @@ The First actively continues within the user's authorized outcome across phases 
 
 ## Dialogue depth
 
+Both modes batch independent questions in each round by default, with numbered questions and concise options for one combined reply. Ask singly only when one material question remains, a later question depends on its answer, or the user requests that pace. Question tools should also receive multiple questions together within their supported limit.
+
 The project index records `dialogue_mode: fast|deep`:
 
 - `deep` is the default for new products, experience direction, architecture, security, payment, or major slice changes. Before the relevant evidence gate, the AI asks one or more independent high-impact questions together, explains why each matters, and provides a recommended default with its main trade-off. It holds dependent questions for the next round.

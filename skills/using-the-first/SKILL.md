@@ -53,6 +53,8 @@ Read `dialogue_mode` from `THE-FIRST.md` when present. Support exactly:
 
 Treat a missing field as `deep`. Change the mode only when the user explicitly requests a different dialogue depth. When project writes are authorized, persist the choice in `THE-FIRST.md`; otherwise apply it only to the current conversation.
 
+In both modes, batch the current phase's independent, answerable questions in the same round by default. When several matter, do not ask just one and end the turn. Number each question, give concise options or a recommendation, and let the user answer by number in one reply. Ask one at a time only when there is just one material question, a later question depends on its answer, or the user explicitly requests that pace. Dialogue depth changes which questions matter, not whether they are batched. When using a question tool, submit multiple independent questions together up to its supported limit; do not serialize them into separate user turns merely because the tool defaults to one question.
+
 For a `deep` checkpoint:
 
 1. Inspect project evidence first and exclude discoverable or already accepted decisions.

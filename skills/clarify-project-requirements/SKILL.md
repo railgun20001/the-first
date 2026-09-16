@@ -40,7 +40,7 @@ When the user does not yet know an answer, preserve it as an explicit unknown an
 Use this built-in adaptation of Matt Pocock's [grill-me](https://www.aihero.dev/skills-grill-me#skill-actions) whenever material requirement decisions remain. No separate skill installation is required. Unlike the standalone, explicitly invoked, stateless skill, this integration runs inside requirements and records confirmed decisions in the project's existing sources.
 
 - Probe assumptions and consequences, not just the requested feature list: who needs the outcome, what happens on failure, where scope ends, and what would disprove success.
-- Ask independent questions whose prerequisites are settled together; follow dependent branches after their answers. Respect an explicit preference for one question at a time.
+- Batch independent questions whose prerequisites are settled in the same round by default, following the [dialogue rules](../using-the-first/SKILL.md#choose-the-dialogue-depth). Number the questions so the user can answer them in one reply; follow dependent branches after their answers.
 - Challenge inconsistent answers with a concrete counterexample and help the user choose; do not turn a recommendation or silence into agreement.
 - When discussion cannot resolve an interaction, identify the smallest prototype or observation needed and route through the experience skill within existing authorization. Keep the requirement unknown until evidence resolves it.
 - Stop questioning when material branches are resolved or explicitly deferred without blocking the accepted scope. Do not reopen settled branches or invent questions to fill a checkpoint.
