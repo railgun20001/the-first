@@ -2,3 +2,5 @@ interface:
   display_name: "Deploy Project"
   short_description: "Deploy with authorization, evidence, and rollback"
   default_prompt: "Use $deploy-project to prepare and execute an authorized deployment safely."
+policy:
+  allow_implicit_invocation: false

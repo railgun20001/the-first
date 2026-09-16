@@ -1,6 +1,7 @@
 ---
 name: deploy-project
-description: Prepare, authorize, execute, verify, document, and roll back software deployment using an evidence-backed technical and preliminary deployment solution. Use when complete feature slices are ready for staging or production, when deployment configuration or runbooks must be completed, or when a user asks to build, publish artifacts, push images, migrate data, provision infrastructure, change DNS, or release. Require explicit authorization for each material external effect and distinguish local, CI, staging, production technical, and business evidence.
+description: Explicitly prepare and execute a deployment with authorization, verification evidence, and rollback.
+disable-model-invocation: true
 ---
 
 # Deploy Project

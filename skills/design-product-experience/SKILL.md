@@ -1,6 +1,7 @@
 ---
 name: design-product-experience
-description: Shape and validate a software product's information architecture, visual direction, interaction flows, interface states, responsiveness, accessibility, and optional minimal prototype before production implementation. Use after requirements are evidenced, when interaction or visual behavior remains uncertain, when a user requests a prototype, or when existing designs and product behavior conflict.
+description: Explicitly design and validate product flows, interface states, and optional prototypes with The First.
+disable-model-invocation: true
 ---
 
 # Design Product Experience

@@ -2,3 +2,5 @@ interface:
   display_name: "Clarify Project Requirements"
   short_description: "Turn ambiguous ideas into evidence-backed project outcomes"
   default_prompt: "Use $clarify-project-requirements to clarify this project before development."
+policy:
+  allow_implicit_invocation: false

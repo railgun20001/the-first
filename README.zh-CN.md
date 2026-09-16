@@ -4,6 +4,12 @@
 
 The First 是一组面向 AI 编程工具的软件开发流程 Skills。它让 AI 在理解需求、体验、技术和部署边界后再开始开发，并由模型基于证据判断各阶段与功能切片是否完成。
 
+## 仅主动调用
+
+The First 及其全部技能均需用户主动调用。在 Codex 中选择 `$using-the-first` 启动或续接完整流程，也可选择某个阶段技能；在 Claude Code 中使用 `/the-first:using-the-first` 或对应阶段命令。任务类型匹配或项目存在 `THE-FIRST.md` 均不会自动启用；新对话续接时需再次明确选择。
+
+主动启用后，流程会在本次请求范围内连续推进，直接读取所需阶段指令，无需每一步重新手动调用。Codex 的每个 `agents/openai.yaml` 均设置 `policy.allow_implicit_invocation: false`；Claude Code 的每个 `SKILL.md` 均设置 `disable-model-invocation: true`。
+
 ## 适用场景
 
 - 从模糊想法初始化新项目。
@@ -61,7 +67,7 @@ The First 会在首次响应中声明当前使用深度共创模式，并说明�
 
 ## Skills
 
-需求阶段调用独立的 `grilling` skill，原样收录用户指定的 Matt Pocock 原版内容，详见[出处与许可证](skills/grilling/SOURCE.md)。它按轮提出所有前提已明确的问题；结束时保留原版的共同理解确认，确认后由 The First 在原授权范围内接续执行。
+主动启用的需求阶段读取独立的 `grilling` 指令，访谈正文保留用户指定的 Matt Pocock 原版内容，仅调整为主动调用的入口元数据，详见[出处与许可证](skills/grilling/SOURCE.md)。它按轮提出所有前提已明确的问题；结束时保留原版的共同理解确认，确认后由 The First 在原授权范围内接续执行。
 
 | Skill | 用途 |
 |---|---|
@@ -75,7 +81,7 @@ The First 会在首次响应中声明当前使用深度共创模式，并说明�
 | `deploy-project` | 在明确授权下实施部署、迁移、健康检查、业务验证和回滚 |
 | `track-project-progress` | 维护跨对话可恢复的状态、索引、切片、反馈和验证证据 |
 
-`guard-artifact-scope` 是跨阶段守卫。只有当同一产物混合面向读者的产品内容与内部约束，且仍存在真实的范围冲突时，AI 才会隐式调用；普通文档修改继续由对应阶段 skill 处理，用户仍可显式调用，守卫本身不会增加阶段或证据门禁。
+`guard-artifact-scope` 是跨阶段守卫。在已主动启用的 The First 流程内，只有当同一产物混合面向读者的产品内容与内部约束，且仍存在真实的范围冲突时，AI 才会读取并应用；普通文档修改继续由对应阶段 skill 处理，用户也可直接主动调用，守卫本身不会增加阶段或证据门禁。
 
 ## 项目真相源与文档模式
 
@@ -102,7 +108,7 @@ The First 不假设某个文件能代表整个项目。它按领域识别真相�
 
 ## 跨对话续接
 
-The First 在项目根目录维护版本控制内的 `THE-FIRST.md`。新对话会先读取它、项目级指令、Git 状态和它链接的真相源，再恢复工作。
+The First 在项目根目录维护版本控制内的 `THE-FIRST.md`。新对话明确启用后，会先读取它、项目级指令、Git 状态和它链接的真相源，再恢复工作。
 
 状态文件包含：
 

@@ -70,7 +70,7 @@ function validateMarkdownLinks(absolutePath) {
   }
 }
 
-const expectedVersion = "0.5.6";
+const expectedVersion = "0.5.7";
 const expectedSkills = [
   "clarify-project-requirements",
   "deploy-project",
@@ -120,7 +120,8 @@ for (const skillName of expectedSkills) {
   const { content, metadata } = parseSkillFrontmatter(skillPath);
   check(metadata.name === skillName, `Skill name mismatch in ${skillPath}`);
   check(typeof metadata.description === "string" && metadata.description.length >= 80, `Skill description is not informative in ${skillPath}`);
-  check(Object.keys(metadata).sort().join(",") === "description,name", `Skill frontmatter must contain only name and description in ${skillPath}`);
+  check(Object.keys(metadata).sort().join(",") === "description,disable-model-invocation,name", `Unexpected skill frontmatter in ${skillPath}`);
+  check(metadata["disable-model-invocation"] === "true", `Skill must require explicit invocation in ${skillPath}`);
   check(!content.includes(unresolvedPlaceholder), `Unresolved TODO placeholder in ${skillPath}`);
   const normalizedBody = content.replace(/^---[\s\S]*?---\s*/, "").replaceAll(/\s+/g, " ").trim();
   check(!skillBodies.has(normalizedBody), `Duplicated skill body in ${skillPath}`);
@@ -128,11 +129,15 @@ for (const skillName of expectedSkills) {
 
   const agentMetadata = read(`skills/${skillName}/agents/openai.yaml`);
   check(agentMetadata.includes(`$${skillName}`), `Default prompt must name $${skillName}`);
+  check(/^policy:\r?\n  allow_implicit_invocation: false\s*$/m.test(agentMetadata), `Codex must disable implicit invocation for ${skillName}`);
 }
 
 const usingSkill = read("skills/using-the-first/SKILL.md");
 for (const required of [
   "Start with evidence",
+  "## Explicit activation",
+  "A new conversation requires an explicit request to use or resume The First",
+  "they do not require another skill-tool invocation or user prompt",
   "Treat a first response that asks for a framework",
   "The model decides completion from sufficient, correctly scoped evidence",
   "$clarify-project-requirements",
@@ -160,17 +165,13 @@ for (const required of [
 const guardSkill = read("skills/guard-artifact-scope/SKILL.md");
 for (const required of [
   "Constraints may govern an artifact without becoming content in that artifact",
-  "Otherwise invoke only when both conditions hold",
+  "Within an explicitly activated The First workflow",
   "Do not invoke it merely because the task edits a README",
   "Do not create a new phase, gate, status, or confirmation step",
   "A documentation sentence can satisfy a requirement only when",
   "Never report a non-documentation requirement as implemented",
 ]) check(guardSkill.includes(required), `Artifact scope guard is missing contract: ${required}`);
 check(guardSkill.replaceAll("\r\n", "\n").length <= 3000, "Artifact scope guard should stay below 3000 characters");
-check(
-  read("skills/guard-artifact-scope/agents/openai.yaml").includes("allow_implicit_invocation: true"),
-  "Artifact scope guard must allow implicit invocation",
-);
 
 const requirementsSkill = read("skills/clarify-project-requirements/SKILL.md");
 for (const required of ["goal → verified facts", "Brand or public product name", "Reuse an existing issue, specification, or heading reference", "sufficient source evidence", "dialogue_mode", "$using-the-first"])
@@ -231,6 +232,8 @@ for (const required of [
 
 const readmeEn = read("README.md").replaceAll("\r\n", "\n");
 const readmeZh = read("README.zh-CN.md").replaceAll("\r\n", "\n");
+check(readmeEn.includes("## Explicit invocation only"), "English README must document explicit invocation");
+check(readmeZh.includes("## 仅主动调用"), "Chinese README must document explicit invocation");
 check(readmeZh.startsWith("# The First\n"), "Chinese README title must be exactly The First");
 check(readmeEn.startsWith("# The First\n"), "English README title must be exactly The First");
 check(readmeZh.includes("[English](README.md) | 中文"), "Chinese README must link to English README");

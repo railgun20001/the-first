@@ -7,4 +7,4 @@
 - 安装记录中的目录哈希：`f0732035b8b1b60ae39454e4191caef32fa91903`（不是 Git 提交号）。
 - 许可证：[MIT](LICENSE)，保留上游版权声明。
 
-`SKILL.md` 保持原版内容；仅在宿主展示配置 `agents/openai.yaml` 中补充 The First 校验要求的调用提示。需求阶段通过技能调用接入，不再维护精简改写版。
+`SKILL.md` 的访谈正文保持原版内容；0.5.7 起调整 frontmatter 描述并添加 `disable-model-invocation: true`，同时在 `agents/openai.yaml` 中设置 `allow_implicit_invocation: false`，统一为用户主动调用。已明确启用的 The First 需求阶段直接读取并遵循该正文，不再维护精简改写版。
