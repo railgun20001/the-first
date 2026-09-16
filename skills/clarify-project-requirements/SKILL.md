@@ -35,17 +35,11 @@ Do not force the user to learn this vocabulary. Ask short, concrete questions an
 
 When the user does not yet know an answer, preserve it as an explicit unknown and offer a few outcome-oriented examples. Never make a default CRUD screen, framework, data store, or deployment shape stand in for an unconfirmed product requirement. For a vague initial idea, establish the outcome, audience, essential workflow, and success evidence before asking any production technology question. Ask for technology preferences only when they materially constrain the product or the project already has an accepted technical boundary.
 
-## Use grill-me during requirements
+## Use the original grilling skill during requirements
 
-Use this built-in adaptation of Matt Pocock's [grill-me](https://www.aihero.dev/skills-grill-me#skill-actions) whenever material requirement decisions remain. No separate skill installation is required. Unlike the standalone, explicitly invoked, stateless skill, this integration runs inside requirements and records confirmed decisions in the project's existing sources.
+When material requirement decisions remain, load and follow [$grilling](../grilling/SKILL.md), bundled verbatim from the user-selected original; see [source and license](../grilling/SOURCE.md). Its whole-frontier rounds and final shared-understanding confirmation govern this interview, including in fast mode. Preserve its question and recommendation content when presenting rounds through the host's built-in question UI; use ordinary conversation when the UI cannot represent the round faithfully.
 
-- Probe assumptions and consequences, not just the requested feature list: who needs the outcome, what happens on failure, where scope ends, and what would disprove success.
-- Batch independent questions whose prerequisites are settled in the same round by default, following the [dialogue rules](../using-the-first/SKILL.md#choose-the-dialogue-depth). Number the questions so the user can answer them in one reply; follow dependent branches after their answers.
-- Challenge inconsistent answers with a concrete counterexample and help the user choose; do not turn a recommendation or silence into agreement.
-- When discussion cannot resolve an interaction, identify the smallest prototype or observation needed and route through the experience skill within existing authorization. Keep the requirement unknown until evidence resolves it.
-- Stop questioning when material branches are resolved or explicitly deferred without blocking the accepted scope. Do not reopen settled branches or invent questions to fill a checkpoint.
-
-Apply the [active progression loop](../using-the-first/SKILL.md#drive-the-next-action) after each answer. Show any remaining blocking question directly in the conversation; once resolved, baseline and continue within the original authorization without waiting for the user to say "start development".
+The original requires user confirmation of shared understanding before acting on the result. Present the concrete synthesis and request that confirmation directly; do not treat an empty frontier or silence as confirmation. Once confirmed, record the decisions in existing project sources and apply the [active progression loop](../using-the-first/SKILL.md#drive-the-next-action) to continue within the original authorization without asking for another "start". Do not reopen an already confirmed interview unless a material requirement changes.
 
 ## Build the minimum complete baseline
 

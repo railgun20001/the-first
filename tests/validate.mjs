@@ -77,6 +77,7 @@ const expectedSkills = [
   "design-product-experience",
   "design-technical-solution",
   "develop-feature-slices",
+  "grilling",
   "guard-artifact-scope",
   "track-project-progress",
   "using-the-first",

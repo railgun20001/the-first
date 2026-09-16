@@ -61,10 +61,11 @@ The First 会在首次响应中声明当前使用深度共创模式，并说明�
 
 ## Skills
 
-需求阶段内置 Matt Pocock 的 [grill-me](https://www.aihero.dev/skills-grill-me#skill-actions) 方法适配：追问关键假设，先问独立问题、再沿回答深入依赖问题，重要决策解决或明确延期后结束追问，无需额外安装。与独立版的无状态对话不同，The First 会把已确认结论写入现有项目真相源，并在授权范围内继续通过后续证据门禁。
+需求阶段调用独立的 `grilling` skill，原样收录用户指定的 Matt Pocock 原版内容，详见[出处与许可证](skills/grilling/SOURCE.md)。它按轮提出所有前提已明确的问题；结束时保留原版的共同理解确认，确认后由 The First 在原授权范围内接续执行。
 
 | Skill | 用途 |
 |---|---|
+| `grilling` | Matt Pocock 原版需求追问：整轮问题、设计树与共同理解确认 |
 | `using-the-first` | 识别新项目或续接项目，读取规则、Git、`THE-FIRST.md` 和真相源，并路由到当前阶段 |
 | `guard-artifact-scope` | 区分产品内容、用户边界、工程约束、流程规则和验证要求，避免把开发指令当成产品成果 |
 | `clarify-project-requirements` | 澄清目标、用户、范围、品牌名、工程名、关键需求和验收标准 |

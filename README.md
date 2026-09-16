@@ -61,10 +61,11 @@ In its first response, The First states that deep co-creation is active and expl
 
 ## Skills
 
-Requirements include a built-in adaptation of Matt Pocock's [grill-me](https://www.aihero.dev/skills-grill-me#skill-actions): probe assumptions, follow dependent questions after answers, and stop once material decisions are resolved or explicitly deferred. It needs no separate installation. Unlike the standalone stateless skill, The First records confirmed decisions in existing project sources and continues through its evidence gates within the user's authorization.
+Requirements invoke the standalone `grilling` skill, copied verbatim from the user-selected Matt Pocock original; see [source and license](skills/grilling/SOURCE.md). It asks the whole ready frontier each round and retains the original final shared-understanding confirmation. After confirmation, The First resumes within existing authorization.
 
 | Skill | Purpose |
 |---|---|
+| `grilling` | Matt Pocock's original interview: whole-frontier rounds, a design tree, and shared-understanding confirmation |
 | `using-the-first` | Detect a new or resumed project, read instructions, Git, `THE-FIRST.md`, and linked sources, then route to the current phase |
 | `guard-artifact-scope` | Separate product content, user boundaries, engineering constraints, workflow rules, and verification so development instructions do not masquerade as product outcomes |
 | `clarify-project-requirements` | Clarify outcomes, audience, scope, brand, engineering name, critical requirements, and acceptance criteria |
