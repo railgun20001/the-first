@@ -39,7 +39,7 @@ Order slices to validate high-impact assumptions early while preserving a usable
 
 Apply `dialogue_mode` through `$using-the-first`. In `deep` mode, finish its focused co-creation checkpoint before accepting the initial or a materially changed slice plan; do not reopen accepted decisions for a routine slice.
 
-Default to one active slice. A user may pre-authorize a specific bounded batch, but each slice still needs its own verification, state, and functional commit. Never turn a bounded approval into indefinite autonomous execution.
+Default to one active slice at a time, not one slice per user prompt. An authorized feature may span several evidenced slices; complete them sequentially within that scope, each with its own verification, state, and functional commit. Never expand the authorized outcome into indefinite autonomous execution.
 
 ## Lock the active slice contract
 
@@ -104,7 +104,7 @@ Report in the project language:
 4. **Suggested next step** — continue, request changes, or investigate a named boundary.
 5. **Completion judgment** — state why evidence is sufficient, or name the exact missing evidence.
 
-Always end an implementation or verification reply with a separate **Suggested next step** line. It must name the immediate authorized action and boundary; do not omit it when the result, self-check, or completion judgment already appears above.
+Apply the [active progression loop](../using-the-first/SKILL.md#drive-the-next-action). Intermediate implementation and verification reports do not end execution. In a final reply, name the completed scope or concrete blocker and next action; do not offer to perform already-authorized work later.
 
 Do not mark the slice complete or create its completion commit before every in-scope row is verified with sufficient evidence.
 
@@ -119,7 +119,7 @@ When the user requests a modification:
 5. Update acceptance criteria and the appropriate automated, self-check, or visual regression guard.
 6. Ask the user to correct the interpretation when it would become a broad rule.
 7. Record the accepted rule through `$track-project-progress`.
-8. Re-implement and re-run relevant verification before requesting acceptance again.
+8. Re-implement and re-run relevant verification, then continue within the existing authorization.
 
 Do not preserve raw conversation dumps. On every later slice, reread rules that affect its scope.
 
@@ -145,5 +145,5 @@ After the accepted functional commit:
 - Mark the slice complete, summarize its requirement references and evidence in the feature-slice row, and clear detailed active coverage before the next slice starts.
 - Reconcile any external authoritative tracker when authorized.
 - Report the result, commit, validation, recommended user action, and next slice suggestion.
-- Start the next slice only after its scope has sufficient evidence or is covered by a prior bounded authorization.
+- Start the next slice immediately when its scope has sufficient evidence and is covered by the user's authorized outcome. If either is missing, surface the precise unresolved decision or authorization in the conversation.
 - When all accepted slices are complete, route to `$deploy-project` for deployment readiness; do not deploy automatically.

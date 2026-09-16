@@ -128,6 +128,6 @@ Ask for explicit consent covering all, selected, manual, declined, or redesigned
 
 After authorized installation, verify the actual version and behavior, record evidence through `$track-project-progress`, and report failures honestly. If installation is declined, record the resulting development limit and offer manual steps or a smaller alternative.
 
-When the environment outcome is recorded, route to `$develop-feature-slices`.
+When the environment outcome is recorded and development prerequisites are satisfied, execute `$develop-feature-slices` within existing implementation authorization. An already-satisfied environment needs no installation consent. Apply the [active progression loop](../using-the-first/SKILL.md#drive-the-next-action); if anything still blocks development, present the exact missing decision, evidence, or permission in the conversation.
 
 Report the result, evidence, optional user review, suggested next step, completion judgment, and any installation request in the project language.

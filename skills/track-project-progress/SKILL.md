@@ -78,12 +78,15 @@ Record each source with its domain, authority, scope, current status, and last c
 After meaningful work, update only affected sections:
 
 - Current phase, gate, blockers, and next action.
+- Authorized outcome and explicit stop points, with the user instruction that established them; never infer authorization from an AI-written plan.
 - Evidence-backed decisions with date, detailed source, and decision source.
 - Feature slice requirement references, outcome, status, completion evidence, verification evidence, and commit.
 - Recent verification with the exact scope and boundary: static, unit, integration, browser, CI, staging, production technical, or production business verification.
 - External tracker summary when it changed.
 
 Never convert "planned", "implemented", "tests passed", "locally observed", and "accepted in production" into one generic completed state.
+
+For each open question, record whether it blocks the current scope, who can resolve it, and the action it unlocks. Remove or mark resolved questions after answers, updating their authoritative source too. Surface actionable user questions in the conversation; writing them into the index alone is not asking them. Apply the [active progression loop](../using-the-first/SKILL.md#drive-the-next-action) after updating progress; a handoff record must not replace work that can continue now.
 
 ## Enforce active slice coverage
 

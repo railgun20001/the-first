@@ -58,8 +58,8 @@ For a `deep` checkpoint:
 1. Inspect project evidence first and exclude discoverable or already accepted decisions.
 2. Identify only the current phase's highest-impact unknowns, usually three to seven; stop earlier when fewer matter.
 3. Ask one or more independent questions in one message. Explain briefly why each matters and provide a recommended default with its main trade-off; keep dependent questions for the next round.
-4. Wait for the answers before continuing down dependent decision paths. Do not implement while the checkpoint is open.
-5. After the final answer, summarize what was decided, deferred, and still risky; update authorized truth sources and return to normal phase execution.
+4. Wait for the answers before continuing down dependent decision paths. Continue independent authorized work when possible; do not implement behavior that depends on unanswered decisions.
+5. After each answer, reconcile resolved questions and ask only remaining material questions. After the final answer, summarize decisions, update authorized truth sources, and execute the next eligible action in the same turn. Do not request another "start" or "continue".
 
 Do not use `deep` mode to repeat resolved questions, fill a quota, or interrupt implementation after the checkpoint unless new evidence would materially change the outcome, safety, or required authorization. Dialogue depth does not add a phase or evidence gate and never authorizes writes, installation, external effects, pushes, or deployment.
 
@@ -69,7 +69,19 @@ Do not use `deep` mode to repeat resolved questions, fill a quota, or interrupt 
 - For diagnosis, explain the cause and evidence; do not implement unless requested.
 - For implementation, require the applicable phase gates before writing production code.
 - For installation, external writes, pushes, or deployment, require matching authorization even if earlier phases are accepted.
-- Never interpret "continue" as permission for unbounded autonomous development. Continue only the current accepted phase or bounded feature slice.
+- Carry the user's authorized outcome across phase boundaries. "Build this feature" covers its necessary clarification, design, implementation, verification, and local commits once each evidence gate is satisfied; a phase transition does not require renewed permission. "Continue" resumes that scope without expanding it. Discussion-only, design-only, and explicit stop points remain binding.
+
+## Drive the next action
+
+Apply this loop on resume, after every user answer, and after every phase or slice completion:
+
+1. Reconcile the user's authorized outcome, current evidence, and open questions from the conversation and linked sources. Clear resolved blockers; do not let stale document status override an answer.
+2. Separate material user decisions, agent-verifiable evidence gaps, and non-blocking deferred items. Investigate or verify agent-owned gaps yourself. Deferred items must not stop unrelated accepted scope.
+3. If an action is authorized and its prerequisites are evidenced, briefly state it and execute it now, loading the next phase skill when needed. Routing means performing that skill's next action, not merely naming it in a final reply. A progress update, optional review, index update, or local commit is not a stop point.
+4. If user input is necessary, present the actual question in the conversation, its impact, a recommended option and trade-off, and what will proceed after the answer. Link supporting documents, but never require the user to search docs to discover why work stopped. Group independent decisions; hold dependent ones until their prerequisites are answered. Use a question tool when available, otherwise ordinary conversation.
+5. End only when the authorized outcome is complete, the user explicitly pauses, or a concrete decision, authorization, or unavailable external resource prevents further useful work. State the exact blocker and smallest user action; do not end with a generic offer to begin work that is already authorized.
+
+Use this same loop when a phase skill is invoked directly. Existing authorization remains valid after answers and across phases; unanswered material decisions and separate installation, external-write, push, or deployment boundaries still apply. Evidence gates require evidence, not repeated ceremonial approval.
 
 ## Route artifact scope when needed
 
@@ -147,7 +159,7 @@ After completing meaningful work, respond in the user's or project's language wi
 1. **Result** — what actually changed or was decided.
 2. **Evidence** — what was inspected or verified, and what remains unverified.
 3. **Recommended user action** — an optional shortest useful review or self-check.
-4. **Suggested next step** — what should happen next and why.
+4. **Next action** — what is being executed now, or the exact question or external prerequisite preventing it; at scope completion, name any optional follow-up as outside the completed scope.
 5. **Completion judgment** — state the evidence, remaining boundary, and why it is sufficient or insufficient.
 
 Never report planned work as completed, static evidence as runtime proof, or local checks as production acceptance.

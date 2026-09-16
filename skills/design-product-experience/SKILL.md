@@ -76,6 +76,8 @@ Update an existing design source first. When no source can hold the decisions, u
 
 Apply `dialogue_mode` through `$using-the-first`. In `deep` mode, finish its focused co-creation checkpoint before completing the experience baseline; in `fast` mode, ask only unresolved decisions that would materially change the product experience.
 
+Apply the [active progression loop](../using-the-first/SKILL.md#drive-the-next-action): resolve agent-owned evidence gaps, present blocking user decisions in the conversation, and execute the next eligible phase within existing authorization after the final answer.
+
 Present:
 
 1. Evidence-backed information structure and core flows.

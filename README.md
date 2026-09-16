@@ -44,7 +44,7 @@ start or resume
   → deploy, verify, and prepare rollback only with authorization
 ```
 
-The First does not run every stage continuously by default. It stops only for unresolved decisions, missing evidence, or missing authorization—not for a mandatory manual validation step. A user may pre-authorize a small, bounded batch, but that never becomes unlimited autonomous development.
+The First actively continues within the user's authorized outcome across phases and feature slices. After an answer resolves a blocker, it executes the next eligible action without requiring another "start". It investigates evidence gaps itself and presents decisions it cannot resolve directly in the conversation, with their impact, a recommended option, and the action the answer unlocks. Optional review and document updates do not pause execution. Discussion-only requests and explicit stop points remain binding; installation, external writes, pushes, and deployment still require matching authorization.
 
 ## Dialogue depth
 
@@ -56,6 +56,8 @@ The project index records `dialogue_mode: fast|deep`:
 In its first response, The First states that deep co-creation is active and explains how to switch to fast mode. A deep checkpoint usually contains three to seven questions and stops earlier when fewer matter. After summarizing decided, deferred, and risky items, normal execution resumes. Dialogue depth does not add an evidence gate or grant permission to write, install, push, or deploy.
 
 ## Skills
+
+Requirements include a built-in adaptation of Matt Pocock's [grill-me](https://www.aihero.dev/skills-grill-me#skill-actions): probe assumptions, follow dependent questions after answers, and stop once material decisions are resolved or explicitly deferred. It needs no separate installation. Unlike the standalone stateless skill, The First records confirmed decisions in existing project sources and continues through its evidence gates within the user's authorization.
 
 | Skill | Purpose |
 |---|---|

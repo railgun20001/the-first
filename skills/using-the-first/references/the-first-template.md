@@ -25,6 +25,8 @@ Translate visible headings and table labels to the project language when creatin
 ## Current phase
 
 - Last completed result: None
+- Authorized outcome and instruction source: Not yet established
+- Explicit stop points: None established
 - Current gate: Requirements in progress
 - Blockers: None confirmed
 - Next action: Clarify the project outcome and acceptance criteria
@@ -46,8 +48,8 @@ Translate visible headings and table labels to the project language when creatin
 
 ## Open questions
 
-| Question | Why it blocks progress | Owner |
-|---|---|---|
+| Question | Blocking scope or non-blocking | Owner | Action after resolution |
+|---|---|---|---|
 
 ## Feature slices
 
