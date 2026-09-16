@@ -70,7 +70,7 @@ function validateMarkdownLinks(absolutePath) {
   }
 }
 
-const expectedVersion = "0.5.4";
+const expectedVersion = "0.5.5";
 const expectedSkills = [
   "clarify-project-requirements",
   "deploy-project",
