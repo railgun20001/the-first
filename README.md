@@ -48,6 +48,8 @@ The First actively continues within the user's authorized outcome across phases 
 
 ## Dialogue depth
 
+In Codex, prefer the built-in question UI: batch independent questions with the asynchronous question tool when available and continue work that does not depend on the answers. Otherwise use the synchronous tool if the current mode permits it, or fall back to ordinary conversation. A preselected option is not a user answer.
+
 Both modes batch independent questions in each round by default, with numbered questions and concise options for one combined reply. Ask singly only when one material question remains, a later question depends on its answer, or the user requests that pace. Question tools should also receive multiple questions together within their supported limit.
 
 The project index records `dialogue_mode: fast|deep`:
