@@ -1,7 +1,6 @@
 ---
 name: guard-artifact-scope
-description: Explicitly review artifact scope so internal constraints and unverified claims stay out of product content.
-disable-model-invocation: true
+description: Prevent internal constraints from leaking into reader-facing artifacts or becoming unsupported product claims. Use if named. Invoke implicitly only when one artifact mixes product content with engineering, workflow, editorial, verification, or history constraints and a concrete unresolved scope conflict remains. Artifact type alone is not a trigger; skip routine phase-owned edits.
 ---
 
 # Guard Artifact Scope
@@ -10,7 +9,7 @@ Constraints may govern an artifact without becoming content in that artifact. Ap
 
 ## Invoke only for a real conflict
 
-Explicit invocation always applies. Within an explicitly activated The First workflow, read and apply this guard only when both conditions hold:
+Explicit invocation always applies. Otherwise invoke only when both conditions hold:
 
 - One artifact spans reader-facing product content and an internal engineering, workflow, editorial, verification, or history constraint.
 - An unresolved risk exists of misplacing that constraint or claiming an outcome without evidence.

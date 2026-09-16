@@ -1,7 +1,6 @@
 ---
 name: design-technical-solution
-description: Explicitly define architecture, interfaces, testing, deployment, and environment needs with The First.
-disable-model-invocation: true
+description: Design and baseline a software project's production technology, architecture, data and API boundaries, security, SEO, performance, business and visual component strategy, testing, build, preliminary deployment, and required environment. Use after requirements and experience are evidenced, when a major technical direction changes, when deployment assumptions are unclear, or before installing project tooling. Inspect the actual environment only after the solution is evidenced, and install nothing without explicit consent.
 ---
 
 # Design Technical Solution

@@ -1,16 +1,9 @@
 ---
 name: using-the-first
-description: Explicitly start or resume The First workflow, restoring project evidence, decisions, and the next phase.
-disable-model-invocation: true
+description: Start or resume an evidence-governed software project workflow before substantial implementation begins. Use when a user wants to initialize a project, turn an idea into software, add a substantial feature, recover work in a new conversation, or explicitly asks to use The First. Inspect project truth sources and THE-FIRST.md, restore current decisions and feedback, enforce evidence gates, and route to the appropriate The First skill. For a vague initial idea, do not ask about frameworks, databases, APIs, hosting, or deployment in the first response.
 ---
 
 # Using The First
-
-## Explicit activation
-
-Start The First only when the user explicitly selects this workflow or one of its skills. A matching task, an existing `THE-FIRST.md`, or a request to inspect or modify this plugin does not activate the workflow. A new conversation requires an explicit request to use or resume The First.
-
-Once activated, continue within the user's authorized outcome. Internal skill references mean read and follow the corresponding `skills/<name>/SKILL.md` file relative to the plugin root as workflow instructions; they do not require another skill-tool invocation or user prompt. Directly selecting a phase skill authorizes only the requested scope, not the entire lifecycle.
 
 Keep the user responsible for product direction and authorization. Prevent implementation from outrunning confirmed requirements, experience, technical constraints, deployment needs, and current project evidence. The model decides completion from sufficient, correctly scoped evidence; user review is optional supporting evidence, never a completion gate.
 

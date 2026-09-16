@@ -1,7 +1,6 @@
 ---
 name: clarify-project-requirements
-description: Explicitly clarify project outcomes, scope, constraints, and traceable acceptance criteria with The First.
-disable-model-invocation: true
+description: Clarify and baseline software project requirements before production design or implementation. Use for new projects, ambiguous feature requests, major scope changes, conflicting product sources, missing acceptance criteria, or when brand, engineering name, audience, platform, SEO, performance, security, privacy, accessibility, visual direction, prototype need, or scope boundaries are not yet accepted. Apply first-principles reasoning internally while speaking to users in plain language, and defer framework, database, API, hosting, and deployment questions when the initial product outcome is still vague.
 ---
 
 # Clarify Project Requirements
@@ -38,7 +37,7 @@ When the user does not yet know an answer, preserve it as an explicit unknown an
 
 ## Use the original grilling skill during requirements
 
-When material requirement decisions remain, read and follow the linked [$grilling instructions](../grilling/SKILL.md) as part of this explicitly selected workflow. The interview body preserves the user-selected original; only invocation metadata is adapted. See [source and license](../grilling/SOURCE.md). Its whole-frontier rounds and final shared-understanding confirmation govern this interview, including in fast mode. Preserve its question and recommendation content when presenting rounds through the host's built-in question UI; use ordinary conversation when the UI cannot represent the round faithfully.
+When material requirement decisions remain, load and follow [$grilling](../grilling/SKILL.md), bundled verbatim from the user-selected original; see [source and license](../grilling/SOURCE.md). Its whole-frontier rounds and final shared-understanding confirmation govern this interview, including in fast mode. Preserve its question and recommendation content when presenting rounds through the host's built-in question UI; use ordinary conversation when the UI cannot represent the round faithfully.
 
 The original requires user confirmation of shared understanding before acting on the result. Present the concrete synthesis and request that confirmation directly; do not treat an empty frontier or silence as confirmation. Once confirmed, record the decisions in existing project sources and apply the [active progression loop](../using-the-first/SKILL.md#drive-the-next-action) to continue within the original authorization without asking for another "start". Do not reopen an already confirmed interview unless a material requirement changes.
 

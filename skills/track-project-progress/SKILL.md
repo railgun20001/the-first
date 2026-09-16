@@ -1,7 +1,6 @@
 ---
 name: track-project-progress
-description: Explicitly reconcile and record The First project state, decisions, evidence, feedback, and next actions.
-disable-model-invocation: true
+description: Maintain the version-controlled THE-FIRST.md project index so decisions, document authority, feature slices, user feedback, verification evidence, commits, trackers, blockers, and next actions survive conversation changes. Use after meaningful project progress, phase or slice transitions, feedback, commits, deployment events, or when a user asks for status, handoff, continuity, or progress reconciliation.
 ---
 
 # Track Project Progress

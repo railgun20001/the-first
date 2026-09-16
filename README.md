@@ -4,12 +4,6 @@ English | [中文](README.zh-CN.md)
 
 The First is a set of software-delivery workflow skills for AI coding tools. It keeps implementation behind explicit requirement, experience, technical, deployment, and feature-slice evidence gates while preserving user ownership of product decisions and authorization.
 
-## Explicit invocation only
-
-The First and all its skills require explicit invocation. In Codex, select `$using-the-first` to start or resume the workflow, or select a specific phase skill. In Claude Code, use `/the-first:using-the-first` or the corresponding phase command. A matching task or an existing `THE-FIRST.md` does not activate it; explicitly select it again when resuming in a new conversation.
-
-After activation, the workflow continues within the requested scope and reads the needed phase instructions without requiring another manual invocation at each step. Codex uses `policy.allow_implicit_invocation: false` in every `agents/openai.yaml`; Claude Code uses `disable-model-invocation: true` in every `SKILL.md`.
-
 ## When to use it
 
 - Initialize a new project from an ambiguous idea.
@@ -67,7 +61,7 @@ In its first response, The First states that deep co-creation is active and expl
 
 ## Skills
 
-The explicitly activated requirements workflow reads the standalone `grilling` instructions. Its interview body preserves the user-selected Matt Pocock original, with invocation metadata adapted for explicit use; see [source and license](skills/grilling/SOURCE.md). It asks the whole ready frontier each round and retains the original final shared-understanding confirmation. After confirmation, The First resumes within existing authorization.
+Requirements invoke the standalone `grilling` skill, copied verbatim from the user-selected Matt Pocock original; see [source and license](skills/grilling/SOURCE.md). It asks the whole ready frontier each round and retains the original final shared-understanding confirmation. After confirmation, The First resumes within existing authorization.
 
 | Skill | Purpose |
 |---|---|
@@ -81,7 +75,7 @@ The explicitly activated requirements workflow reads the standalone `grilling` i
 | `deploy-project` | Implement authorized deployment, migration, health checks, business verification, and rollback |
 | `track-project-progress` | Maintain cross-conversation state, source links, slices, feedback, and verification evidence |
 
-`guard-artifact-scope` is a cross-phase guard. Within an explicitly activated The First workflow, the AI reads it only when one artifact mixes reader-facing product content with internal constraints and a concrete scope conflict remains. Routine document edits stay with their phase skill; direct explicit invocation remains available, and the guard adds no separate phase or evidence gate.
+`guard-artifact-scope` is a cross-phase guard. The AI invokes it implicitly only when one artifact mixes reader-facing product content with internal constraints and a concrete scope conflict remains. Routine document edits stay with their phase skill; explicit invocation remains available, and the guard adds no separate phase or evidence gate.
 
 ## Sources of truth and documentation modes
 
@@ -108,7 +102,7 @@ Only when the project has no reusable location does The First fall back to:
 
 ## Cross-conversation continuity
 
-The First maintains a version-controlled `THE-FIRST.md` at the project root. After explicit activation in a new conversation, it reads the index together with project instructions, Git state, and linked sources of truth before resuming work.
+The First maintains a version-controlled `THE-FIRST.md` at the project root. A new conversation reads it together with project instructions, Git state, and linked sources of truth before resuming work.
 
 The file contains:
 

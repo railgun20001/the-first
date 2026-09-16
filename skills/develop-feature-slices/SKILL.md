@@ -1,7 +1,6 @@
 ---
 name: develop-feature-slices
-description: Explicitly implement and verify observable feature slices with requirement coverage and focused commits.
-disable-model-invocation: true
+description: Plan, implement, test, review, and commit one observable feature slice at a time after requirements, experience, technical solution, and environment outcomes have sufficient evidence. Use when production development is authorized, when a large feature needs decomposition, when resuming an active slice, or when user corrections must be distilled into durable regression rules. Let the model close a slice from evidence, provide optional self-check steps, preserve unrelated Git work, and create focused functional commits.
 ---
 
 # Develop Feature Slices

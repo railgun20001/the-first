@@ -2,5 +2,3 @@ interface:
   display_name: "Use The First"
   short_description: "Start or resume a governed project workflow"
   default_prompt: "Use $using-the-first to start or resume this project safely."
-policy:
-  allow_implicit_invocation: false

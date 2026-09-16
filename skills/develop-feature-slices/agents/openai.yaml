@@ -2,5 +2,3 @@ interface:
   display_name: "Develop Feature Slices"
   short_description: "Deliver evidence-backed features with tests and focused commits"
   default_prompt: "Use $develop-feature-slices to deliver the next evidence-backed feature slice."
-policy:
-  allow_implicit_invocation: false
